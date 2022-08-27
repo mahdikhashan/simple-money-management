@@ -1,0 +1,66 @@
+.btn {
+  @apply flex flex-row;
+  @apply items-center justify-center;
+  @apply bg-dt-green;
+  @apply text-white;
+  @apply rounded-md;
+  @apply border-none;
+}
+
+.btn:hover {
+  @apply bg-dt-green-light;
+  @apply cursor-pointer;
+}
+
+.btn-small {
+  @apply text-[14px];
+  line-height: 22px;
+  font-weight: 700;
+  @apply py-2 px-4;
+}
+
+.btn-medium {
+  @apply text-[16px];
+  line-height: 25px;
+  font-weight: 700;
+  @apply py-3 px-5;
+}
+
+.btn-large {
+  @apply text-[16px];
+  line-height: 25px;
+  font-weight: 700;
+  @apply py-4 px-8;
+}
+
+.btn-search {
+  @apply gap-3;
+  @apply text-[16px];
+  line-height: 25px;
+  font-weight: 700;
+  @apply py-[14px] px-8;
+  @apply text-dt-green-light;
+  @apply bg-transparent;
+  @apply border-dt-green-light border-[1px] border-solid;
+}
+
+.btn-search:hover {
+  @apply gap-3;
+  @apply text-[16px];
+  line-height: 25px;
+  font-weight: 700;
+  @apply py-[14px] px-8;
+  @apply text-white;
+  @apply border-dt-green-light border-2 border-solid;
+
+}
+
+.btn-icon {
+  @apply w-5 h-5;
+  content: url('../../../assets/icons/magnifying-glass-white.png');
+}
+
+.btn-icon-hover {
+  @apply w-5 h-5;
+  content: url('../../../assets/icons/magnifying-glass-green.png');
+}
