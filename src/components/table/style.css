@@ -37,6 +37,12 @@ table > tr > td {
   all: unset;
 }
 
+.table-empty-box {
+  display: flex;
+  @apply rounded-[6px];
+  @apply bg-dt-grey-3;
+}
+
 .table-empty-box,
 .table-empty-box > span{
   display: flex;
