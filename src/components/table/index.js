@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeCost, filterCostByDescription } from "../../states/cost";
+import { removeCost } from "../../states/cost";
 
 import Pagination from "../pagination";
 
@@ -12,11 +12,6 @@ import './style.css'
 
 function Table({ currentItems, header }) {
   const dispatch = useDispatch()
-
-  const removeRow = (id) => {
-    dispatch(removeCost(id))
-  }
-  console.log(currentItems)
 
   return (
     <>

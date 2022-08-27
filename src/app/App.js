@@ -17,7 +17,7 @@ import Card from '../components/common/card';
 import '../styles/App.css';
 
 function App() {
-  const { darkMode, toggleDarkMode } = useContext(ThemeContext)
+  const { darkMode } = useContext(ThemeContext)
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [filter, setFilter] = useState('')
