@@ -10,7 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 
 import { Layout } from './layouts/layout';
-import { ThemeProvider } from './theme';
+import { ThemeProvider } from './contexts/theme';
 
 let persistor = persistStore(store)
 

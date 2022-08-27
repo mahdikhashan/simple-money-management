@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 
 import classNames from 'classnames';
-
-import { ThemeContext } from '../theme';
+import useTheme from "../hooks/use-theme";
 
 import Button from '../components/common/button';
 import Input from '../components/common/input';
@@ -17,7 +16,7 @@ import Card from '../components/common/card';
 import '../styles/App.css';
 
 function App() {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [filter, setFilter] = useState('')
