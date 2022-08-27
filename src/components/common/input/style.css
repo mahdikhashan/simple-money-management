@@ -1,0 +1,24 @@
+.input {
+  @apply bg-dt-grey-1;
+  @apply p-4;
+  @apply min-w-[248px];
+  @apply text-[16px] text-dt-grey-6;
+  line-height: 22px;
+  font-weight: 400;
+  @apply rounded-md;
+  @apply border-none;
+}
+
+.input::placeholder {
+  @apply text-dt-grey-5;
+}
+
+.input:active,
+.input:focus {
+  @apply border-2 border-dt-green-light;
+  outline: 1px solid #00B37E;
+}
+
+.input-error {
+  outline: 1px solid #F75A68 !important;
+}
