@@ -1,0 +1,15 @@
+.card {
+  @apply p-6;
+  @apply rounded-md;
+  @apply min-w-[352px];
+  @apply h-[137px];
+  @apply flex flex-col;
+}
+
+.card-grey {
+  @apply bg-dt-grey-4;
+}
+
+.card-green {
+  @apply bg-dt-green-dark;
+}
