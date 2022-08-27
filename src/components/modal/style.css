@@ -1,0 +1,58 @@
+.ReactModal__Overlay {
+  overflow: hidden;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.ReactModal__Content {
+  border: none !important;
+  @apply bg-dt-grey-2 !important;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 48px !important;
+  width: 528px;
+  height: 480px;
+  margin: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+form,
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: stretch;
+}
+
+.wrapper > form > h2 {
+  font-size: 24px;
+  line-height: 33.8px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 32px;
+}
+
+form > .input-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: auto;
+  gap: 16px;
+}
+
+form > .select-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin: 24px 0 40px;
+}
+
+form > button {
+  display: flex;
+}

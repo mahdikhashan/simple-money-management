@@ -1,0 +1,68 @@
+.App {
+  @apply bg-dt-grey-2;
+  @apply min-h-screen;
+  @apply relative;
+  @apply py-10;
+  @apply z-[1];
+}
+
+.App-dark-mode {
+  background-color: #202024;
+}
+
+.top-wrapper {
+  @apply container mx-auto;
+  @apply flex items-center justify-between;
+  @apply pb-10;
+  @apply z-10;
+}
+
+.user-details {
+  @apply container mx-auto;
+  @apply flex items-center justify-between;
+  @apply gap-4;
+  @apply z-10;
+}
+
+.user-details > * {
+  @apply flex-grow;
+}
+
+.user-detail-header {
+  @apply flex items-center justify-between;
+}
+
+.user-detail-header:first-child {
+  @apply text-dt-grey-6 text-[16px];
+}
+
+.user-detail-body {
+  @apply flex items-end justify-start;
+  @apply flex-grow;
+  @apply text-white text-4xl;
+}
+
+.top-black-box {
+  @apply bg-dt-grey-1;
+  @apply absolute;
+  @apply top-0 left-0;
+  @apply w-full h-[212px];
+  @apply z-[-1];
+}
+
+.search-bar {
+  @apply container mx-auto;
+  @apply flex items-center justify-between;
+  @apply mt-16;
+  @apply gap-4;
+}
+
+.search-bar :first-child {
+  flex-grow: 1;
+}
+
+.transaction-table {
+  @apply container mx-auto;
+  @apply table items-center justify-around;
+  @apply mt-6;
+}

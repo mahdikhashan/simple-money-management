@@ -1,0 +1,48 @@
+table {
+  display: flex;
+  flex-direction: column;
+}
+
+table > .table-header {
+  @apply flex flex-row items-center justify-between;
+}
+
+table > tr {
+  display: flex;
+  flex: 1;
+  @apply text-dt-grey-6;
+  @apply items-center justify-between;
+  @apply rounded-[5px];
+  @apply bg-dt-grey-3;
+  @apply px-8 py-5;
+  @apply mb-2;
+}
+
+table > tr > td {
+  text-align: start;
+}
+
+.table-row-edit {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  @apply gap-4;
+}
+
+.table-row-edit > * {
+  cursor: pointer !important;
+}
+
+.table-row-edit > button {
+  all: unset;
+}
+
+.table-empty-box,
+.table-empty-box > span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @apply py-8;
+  @apply text-dt-grey-5;
+}

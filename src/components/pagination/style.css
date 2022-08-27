@@ -1,0 +1,55 @@
+ul {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0 5rem;
+}
+
+li a {
+  border-radius: 6px;
+  @apply px-4 py-3;
+  cursor: pointer;
+  @apply bg-dt-grey-3;
+  @apply text-white;
+}
+
+li.previous a,
+li.next a,
+li.break a {
+  border-color: transparent;
+  @apply bg-transparent !important;
+}
+li.selected a {
+  @apply bg-dt-green-dark;
+}
+li.active a {
+  background-color: #0366d6;
+  border-color: transparent;
+  color: white;
+  min-width: 32px;
+}
+li.disabled a {
+  color: grey;
+}
+li.disable,
+li.disabled a {
+  cursor: default;
+}
+
+li.previous {
+  background-image: url('../../assets/icons/caret-left-bold.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+li.next {
+  background-image: url('../../assets/icons/caret-right-bold.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
