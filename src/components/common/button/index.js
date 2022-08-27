@@ -3,13 +3,12 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
+import useHover from "../../../hooks/use-hover";
+
 import './style.css'
 
 const Button = ({ variant, label, children, search, onClick }) => {
-  const [hover, setHover] = useState(false);
-
-  const onMouseEnter = () => setHover(true)
-  const onMouseExit  = () => setHover(false)
+  const [hoverRef, isHovered] = useHover()
 
   return (
     <>
@@ -21,11 +20,10 @@ const Button = ({ variant, label, children, search, onClick }) => {
             'btn-search': search,
           }
         )}
+        ref={hoverRef}
         onClick={onClick}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseExit}
       >
-        {search && <img className={ hover ? 'btn-icon' : 'btn-icon-hover' } alt='search-icont' />}
+        {search && <img className={ isHovered ? 'btn-icon' : 'btn-icon-hover' } alt='search-icon' />}
         {label ?? children ?? 'Button'}
       </button>
     </>
