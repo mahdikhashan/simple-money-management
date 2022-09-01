@@ -1,8 +1,7 @@
 .App {
   @apply bg-dt-grey-2;
-  @apply min-h-screen;
+  @apply h-screen;
   @apply relative;
-  @apply py-10;
   @apply z-[1];
 }
 

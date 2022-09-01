@@ -1,7 +1,7 @@
 .top-wrapper {
   @apply container mx-auto;
   @apply flex flex-row items-center justify-between;
-  @apply pb-10;
+  @apply py-10;
   @apply z-10;
 }
 
