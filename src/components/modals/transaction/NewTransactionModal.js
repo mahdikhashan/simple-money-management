@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 
-import { addCost } from "../../../store/cost/slices/cost";
+import { addCost } from "../../../store/cost/slices";
 import { useDispatch } from "react-redux";
 
 import Input from "../../common/input";
@@ -20,9 +20,9 @@ const NewTransactionModal = memo(({ isOpen, onClose }) => {
 
   const dispatch = useDispatch()
 
-  const [descriptionField, setDescriptionField] = useState('f')
-  const [priceField, setPriceField] = useState('f')
-  const [categoryField, setCategoryField] = useState('f')
+  const [descriptionField, setDescriptionField] = useState('')
+  const [priceField, setPriceField] = useState('')
+  const [categoryField, setCategoryField] = useState('')
 
   const descriptionOnChange = (e) => setDescriptionField(e.target.value)
   const priceOnChange = (e) => setPriceField(e.target.value)
@@ -35,6 +35,8 @@ const NewTransactionModal = memo(({ isOpen, onClose }) => {
 
     onClose()
   }
+
+  const [SelectComponent, setSelectComponent] = useState(false)
 
   return (
     <>
@@ -66,8 +68,20 @@ const NewTransactionModal = memo(({ isOpen, onClose }) => {
                 placeholder='Category' />
             </div>
             <div className="select-group">
-              <Select variant='up' id='select-up' label='Enter' />
-              <Select id='select-down' label='Exit' />
+              <Select
+                id='select-up'
+                label='Enter'
+                variant='up'
+                value={SelectComponent}
+                changeHandle={setSelectComponent}
+              />
+              <Select
+                id='select-down'
+                label='Enter'
+                variant='down'
+                value={SelectComponent}
+                changeHandle={setSelectComponent}
+              />
             </div>
             <Button variant='large'>Register</Button>
           </form>
