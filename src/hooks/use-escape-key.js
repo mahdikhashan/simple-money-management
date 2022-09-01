@@ -13,8 +13,6 @@ const useEscapeKey = ({ handleClose }) => {
   const keyDownHandler = ({ key }) => {
     if (key === targetKey) {
       setIsKeyPressed(true)
-
-      // callback
       handleClose()
     }
   }
