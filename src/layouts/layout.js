@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Layout = ({ children }) => {
+export const MainLayout = ({ children }) => {
   return (
     <>
       <main>
