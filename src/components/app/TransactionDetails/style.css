@@ -1,0 +1,24 @@
+.user-details {
+  @apply container mx-auto;
+  @apply flex items-center justify-between;
+  @apply gap-4;
+  @apply z-10;
+}
+
+.user-details > * {
+  @apply flex-grow;
+}
+
+.user-detail-header {
+  @apply flex items-center justify-between;
+}
+
+.user-detail-header:first-child {
+  @apply text-dt-grey-6 text-[16px];
+}
+
+.user-detail-body {
+  @apply flex items-end justify-start;
+  @apply flex-grow;
+  @apply text-white text-4xl;
+}

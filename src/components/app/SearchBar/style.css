@@ -1,0 +1,10 @@
+.search-bar {
+  @apply container mx-auto;
+  @apply flex items-center justify-between;
+  @apply mt-16;
+  @apply gap-4;
+}
+
+.search-bar :first-child {
+  flex-grow: 1;
+}
