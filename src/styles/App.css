@@ -6,11 +6,19 @@
   @apply z-[1];
 }
 
-.App-dark-mode {
-  background-color: #202024;
+.App-white-mode {
+  @apply bg-dt-grey-7;
 }
 
 .top-black-box {
+  @apply bg-dt-grey-5;
+  @apply absolute;
+  @apply top-0 left-0;
+  @apply w-full h-[212px];
+  @apply z-[-1];
+}
+
+.top-white-box {
   @apply bg-dt-grey-1;
   @apply absolute;
   @apply top-0 left-0;

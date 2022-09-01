@@ -15,8 +15,8 @@ function App() {
   const { darkMode } = useDarkMode()
 
   return (
-    <div className={classNames("App", { "App-dark-mode": darkMode })}>
-      <div className='top-black-box' />
+    <div className={classNames("App", { "App-white-mode": darkMode })}>
+      <div className={ darkMode ? 'top-black-box' : 'top-white-box'} />
       <div className='top-container' />
       <Navigation />
       <TransactionDetails />

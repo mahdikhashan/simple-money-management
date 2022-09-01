@@ -1,6 +1,20 @@
 .top-wrapper {
   @apply container mx-auto;
-  @apply flex items-center justify-between;
+  @apply flex flex-row items-center justify-between;
   @apply pb-10;
   @apply z-10;
+}
+
+.btn-wrapper {
+  @apply flex flex-row gap-4;
+  @apply items-center;
+}
+
+.btn-wrapper > img {
+  height: 32px;
+  width: 32px;
+  @apply cursor-pointer;
+  @apply bg-dt-green;
+  @apply rounded-[6px];
+  @apply p-2;
 }
