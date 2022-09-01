@@ -1,19 +1,19 @@
 import React, { memo, useState } from "react";
 
-import { addCost } from "../../store/cost/slices/cost";
+import { addCost } from "../../../store/cost/slices/cost";
 import { useDispatch } from "react-redux";
 
-import Input from "../common/input";
-import Select from "../common/select";
-import Button from "../common/button";
+import Input from "../../common/input";
+import Select from "../../common/select";
+import Button from "../../common/button";
 
-import Modal from "../common/modal";
+import Modal from "../../common/modal";
 
-import useEscapeKey from "../../hooks/use-escape-key";
+import useEscapeKey from "../../../hooks/use-escape-key";
 
-import CloseIcon from '../../assets/icons/x-regular.png'
+import CloseIcon from '../../../assets/icons/x-regular.png'
 
-import '../common/modal/style.css'
+import './style.css'
 
 const NewTransactionModal = memo(({ isOpen, onClose }) => {
   const isEscPressed = useEscapeKey({onClose})
