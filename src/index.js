@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../src/styles/index.css';
-import App from './app/App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
-import store from './app/store'
+import store from './store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 
-import { Layout } from './layouts/layout';
+import { MainLayout } from './layouts/layout';
 import { ThemeProvider } from './contexts/theme';
+
+import ModalProvider from "./contexts/modal/ModalProvider";
 
 let persistor = persistStore(store)
 
@@ -20,9 +22,11 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider>
-          <Layout>
-            <App />
-          </Layout>
+          <MainLayout>
+            <ModalProvider>
+              <App />
+            </ModalProvider>
+          </MainLayout>
         </ThemeProvider>
       </PersistGate>
     </Provider>
