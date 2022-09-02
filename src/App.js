@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import useFilterByDescription from "./store/cost/selectors/filterByDescription";
 
 import classNames from 'classnames';
-import useDarkMode from "./hooks/use-dark-mode";
+import useDarkMode from "./hooks/useDarkMode";
 
 import PaginatedTable from './components/app/table';
 
@@ -13,6 +15,8 @@ import './styles/App.css';
 
 function App() {
   const { darkMode } = useDarkMode()
+  const [searchKeyword, setSearchKeyword] = useState('')
+  const filteredCost = useFilterByDescription(searchKeyword)
 
   return (
     <div className={classNames("App", { "App-white-mode": darkMode })}>
@@ -20,9 +24,9 @@ function App() {
       <div className='top-container' />
       <Navigation />
       <TransactionDetails />
-      <SearchBar />
+      <SearchBar value={searchKeyword} onChange={(e) => setSearchKeyword(e.target.value)} onClick={() => []}/>
       <div className='transaction-table'>
-        <PaginatedTable itemsPerPage={15} header={false} />
+        <PaginatedTable data={filteredCost} itemsPerPage={10} header={false} />
       </div>
     </div>
   );

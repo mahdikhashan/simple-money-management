@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeCost } from "../../../store/cost/slices";
 
-import useModal from "../../../hooks/use-modal";
+import useModal from "../../../hooks/useModal";
 import EditTransactionModal from "../../modals/transaction/EditTransactionModal";
 
 import Pagination from "../../pagination";
@@ -67,21 +67,19 @@ function Table({ currentItems, header }) {
   )
 }
 
-function PaginatedTable({ itemsPerPage, header, filterByDescription='' }) {
-  const costs = useSelector((state) => state.costs)
-
+function PaginatedTable({ data, itemsPerPage, header, filterByDescription='' }) {
   const [currentItems, setCurrentItems] = useState([])
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(costs.slice(itemOffset, endOffset).reverse())
-    setPageCount(Math.ceil(costs.length / itemsPerPage))
-  }, [itemOffset, itemsPerPage, costs, filterByDescription])
+    setCurrentItems(data.slice(itemOffset, endOffset).reverse())
+    setPageCount(Math.ceil(data.length / itemsPerPage))
+  }, [itemOffset, itemsPerPage, data, filterByDescription])
 
   const handlePageClick = e => {
-    const newOffset = (e.selected * itemsPerPage) % costs.length
+    const newOffset = (e.selected * itemsPerPage) % data.length
     setItemOffset(newOffset)
   }
 
