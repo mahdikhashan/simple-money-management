@@ -9,7 +9,7 @@ import Button from "../../common/button";
 
 import Modal from "../../common/modal";
 
-import useEscapeKey from "../../../hooks/use-escape-key";
+import useEscapeKey from "../../../hooks/useEscapeKey";
 
 import CloseIcon from '../../../assets/icons/x-regular.png'
 

@@ -3,7 +3,7 @@ import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
-import useHover from "../../../hooks/use-hover";
+import useHover from "../../../hooks/useHover";
 
 import './style.css'
 

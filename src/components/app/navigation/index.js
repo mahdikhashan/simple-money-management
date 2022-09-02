@@ -1,9 +1,9 @@
 import React from 'react'
 import Logo from "../../common/logo";
 import Button from "../../common/button";
-import useModal from "../../../hooks/use-modal";
+import useModal from "../../../hooks/useModal";
 import NewTransactionModal from "../../modals/transaction/NewTransactionModal";
-import useDarkMode from "../../../hooks/use-dark-mode";
+import useDarkMode from "../../../hooks/useDarkMode";
 
 import './style.css'
 
