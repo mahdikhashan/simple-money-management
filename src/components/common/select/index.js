@@ -11,7 +11,7 @@ import './style.css'
 
 const Select = ({ label, id, value, checked, name, variant, onChange }) => {
   const source = variant === "up" ? 
-    ( value ? ArrowUpWhite : ArrowUp ) : ( value ? ArrowDownWhite : ArrowDown )
+    ( checked ? ArrowUpWhite : ArrowUp ) : ( checked ? ArrowDownWhite : ArrowDown )
 
   return (
     <>
