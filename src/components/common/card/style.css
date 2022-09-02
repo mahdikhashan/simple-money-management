@@ -13,3 +13,7 @@
 .card-green {
   @apply bg-dt-green-dark;
 }
+
+.card-red {
+  @apply bg-dt-red-dark;
+}
