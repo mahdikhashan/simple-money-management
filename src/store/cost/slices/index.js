@@ -13,10 +13,11 @@ export const costSlice = createSlice({
       const d = new Date()
       const cost = {
         id: uuid(),
-        price: action.payload.priceField,
-        category: action.payload.categoryField,
-        description: action.payload.descriptionField,
-        date: d.toLocaleDateString('en-US')
+        price: action.payload.price,
+        category: action.payload.category,
+        description: action.payload.description,
+        date: d.toLocaleDateString('en-US'),
+        input: action.payload.input
       }
 
       state.push(cost);
@@ -25,7 +26,15 @@ export const costSlice = createSlice({
       return state.filter((cost) => cost.id !== action.payload.id)
     },
     updateCost: (state, action) => {
-      // TODO: update item in state
+      const index = state.findIndex((row) => row.id === action.payload.id)
+      if (index !== -1) {
+        const id = state[index].id
+        const d = new Date()
+        state[index] = {...action.payload, date: d.toLocaleDateString('en-US'), id}
+      }
+    },
+    filterByID: (state, action) => {
+      return state.filter((row) => row.id === action.payload.id)
     },
     filterCostByDescription: (state, action) => {
       const stateFiltered = state.filter((item) =>
