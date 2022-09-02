@@ -11,8 +11,9 @@ import DeleteIcon from '../../../assets/icons/trash-red-regular.png'
 import EditIcon from '../../../assets/icons/pen-blue-regular.png'
 import EmptyBoxIcon from '../../../assets/icons/empty-box-grey-regular.png'
 
-import './style.css'
 import classNames from "classnames";
+
+import './style.css'
 
 function Table({ currentItems, header }) {
   const dispatch = useDispatch()
@@ -36,7 +37,7 @@ function Table({ currentItems, header }) {
             <tr>
               <td className={'table-item-description'}>{item.description}</td>
               <td className={classNames([item.input ? 'price-input' : 'price-output', 'table-item-price'])}>
-                {`${item.input === false ? '- ':' '} R$`}&nbsp;{item.price.toLocaleString()}
+                {`${item.input === false ? '- ':' '} R$`}&nbsp;{parseInt(item.price).toLocaleString()}
               </td>
               <td className={'table-item-category'}>{item.category}</td>
               <td className={'table-item-date'}>{item.date}</td>

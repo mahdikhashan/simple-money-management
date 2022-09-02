@@ -37,21 +37,21 @@ const TransactionDetails = () => {
             <span>Enter</span>
             <span><img src={require('../../../assets/icons/arrow-circle-up-regular.png')} alt="icon" /></span>
           </div>
-          <div className='user-detail-body'>R$ {inputTransaction}</div>
+          <div className='user-detail-body'>R$ {inputTransaction.toLocaleString()}</div>
         </Card>
         <Card color="grey">
           <div className='user-detail-header'>
             <span>Output</span>
             <span><img src={require('../../../assets/icons/arrow-circle-down-regular.png')} alt="icon" /></span>
           </div>
-          <div className='user-detail-body'>R$ {outputTransaction}</div>
+          <div className='user-detail-body'>R$ {outputTransaction.toLocaleString()}</div>
         </Card>
-        <Card color="green">
+        <Card color={ totalTransaction >= 0 ? "green" : "red"}>
           <div className='user-detail-header'>
             <span>Total</span>
             <span><img src={require('../../../assets/icons/currency-dollar-regular.png')} alt="icon" /></span>
           </div>
-          <div className='user-detail-body'>R$ {totalTransaction}</div>
+          <div className='user-detail-body'>R$ {totalTransaction.toLocaleString()}</div>
         </Card>
       </div>
     </>
