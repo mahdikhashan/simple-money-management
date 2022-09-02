@@ -5,28 +5,12 @@ import PropTypes from 'prop-types'
 
 import './style.css'
 
-const Input = ({
-  value,
-  type,
-  error,
-  placeholder,
-  onChangeHandler,
-}) => {
+const Input = ({ error, ...props }) => {
   return (
     <>
       <input
-        className={
-          classNames(
-            'input',
-            {
-              'input-error': !!error,
-            }
-          )
-        }
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChangeHandler}
+        className={classNames('input', {'input-error': !!error})}
+        {...props}
       />
     </>
   )
