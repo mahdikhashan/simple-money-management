@@ -16,9 +16,9 @@ import CloseIcon from '../../../assets/icons/x-regular.png'
 import './style.css'
 
 const NewTransactionModal = memo(({ isOpen, onClose, ...initials }) => {
-  const isEscPressed = useEscapeKey({onClose})
-
   const dispatch = useDispatch()
+
+  useEscapeKey({onClose})
 
   const [descriptionField, setDescriptionField] = useState(initials.description)
   const [priceField, setPriceField] = useState(initials.price)

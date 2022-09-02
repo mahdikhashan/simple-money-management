@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeCost, updateCost } from "../../../store/cost/slices";
+import { removeCost } from "../../../store/cost/slices";
 
 import useModal from "../../../hooks/use-modal";
 import EditTransactionModal from "../../modals/transaction/EditTransactionModal";
