@@ -9,25 +9,21 @@ import ArrowDownWhite from '../../../assets/icons/arrow-circle-down-white.png'
 
 import './style.css'
 
-const Select = ({ label, id, value, name, variant }) => {
-  const [checked, setChecked] = useState(false)
-
-  const handleCheckboxChange = e => setChecked(e.target.checked)
-
+const Select = ({ label, id, value, checked, name, variant, onChange }) => {
   const source = variant === "up" ? 
-    ( checked ? ArrowUpWhite : ArrowUp ) : ( checked ? ArrowDownWhite : ArrowDown )
+    ( value ? ArrowUpWhite : ArrowUp ) : ( value ? ArrowDownWhite : ArrowDown )
 
   return (
     <>
       <div className="wrapper">
         <input 
           className={ variant === "up" ? 'variant-up' : 'variant-down' }
-          type="checkbox" 
+          type="radio"
           id={id} 
           name={name} 
-          value={value} 
-          checked={checked} 
-          onChange={handleCheckboxChange}
+          value={value}
+          checked={checked}
+          onChange={onChange}
           />
         <label for={id}>
           <img 
@@ -42,19 +38,13 @@ const Select = ({ label, id, value, name, variant }) => {
 
 Select.defaultProps = {
   label: 'Text',
-  checked: null,
   id: 'my_select',
-  value: 'selected',
-  name: 'my_select',
   variant: 'down'
 }
 
 Select.propTypes = {
   label: PropTypes.string,
-  checked: PropTypes.bool,
   id: PropTypes.string,
-  value: PropTypes.string,
-  name: PropTypes.string,
   variant: PropTypes.string,
 }
 

@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 
-import { addCost } from "../../../store/cost/slices";
+import { updateCost } from "../../../store/cost/slices";
 import { useDispatch } from "react-redux";
 
 import Input from "../../common/input";
@@ -31,12 +31,24 @@ const EditTransactionModal = memo(({ isOpen, onClose, ...initials }) => {
   const formOnSubmitHandler = (e) => {
     e.preventDefault()
 
-    dispatch(addCost({ priceField, descriptionField, categoryField }))
+    dispatch(updateCost({
+        price: priceField,
+        description: descriptionField,
+        category: categoryField,
+        id: initials.id,
+        date: initials.date,
+        input: transactionTypeField === 'up'
+      })
+    )
 
     onClose()
   }
 
-  const [SelectComponent, setSelectComponent] = useState(false)
+  const [transactionTypeField, setTransactionTypeField] = useState(initials.input ? 'up' : 'down')
+
+  const onChangeSelectGroup = (e) => {
+    setTransactionTypeField(e.target.value)
+  }
 
   return (
     <>
@@ -67,20 +79,25 @@ const EditTransactionModal = memo(({ isOpen, onClose, ...initials }) => {
                 onChangeHandler={categoryOnChange}
                 placeholder='Category' />
             </div>
-            <div className="select-group">
+            <div
+              className="select-group"
+              onChange={onChangeSelectGroup}
+            >
               <Select
                 id='select-up'
                 label='Enter'
                 variant='up'
-                value={SelectComponent}
-                changeHandle={setSelectComponent}
+                name='select-transaction-type'
+                value='up'
+                checked={transactionTypeField === 'up'}
               />
               <Select
                 id='select-down'
                 label='Enter'
                 variant='down'
-                value={SelectComponent}
-                changeHandle={setSelectComponent}
+                name='select-transaction-type'
+                value='down'
+                checked={transactionTypeField === 'down'}
               />
             </div>
             <Button variant='large'>Edit</Button>

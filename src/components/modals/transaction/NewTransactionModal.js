@@ -15,14 +15,14 @@ import CloseIcon from '../../../assets/icons/x-regular.png'
 
 import './style.css'
 
-const NewTransactionModal = memo(({ isOpen, onClose }) => {
+const NewTransactionModal = memo(({ isOpen, onClose, ...initials }) => {
   const isEscPressed = useEscapeKey({onClose})
 
   const dispatch = useDispatch()
 
-  const [descriptionField, setDescriptionField] = useState('')
-  const [priceField, setPriceField] = useState('')
-  const [categoryField, setCategoryField] = useState('')
+  const [descriptionField, setDescriptionField] = useState(initials.description)
+  const [priceField, setPriceField] = useState(initials.price)
+  const [categoryField, setCategoryField] = useState(initials.category)
 
   const descriptionOnChange = (e) => setDescriptionField(e.target.value)
   const priceOnChange = (e) => setPriceField(e.target.value)
@@ -30,13 +30,21 @@ const NewTransactionModal = memo(({ isOpen, onClose }) => {
 
   const formOnSubmitHandler = (e) => {
     e.preventDefault()
-
-    dispatch(addCost({ priceField, descriptionField, categoryField }))
+    dispatch(addCost({
+      price: priceField,
+      description: descriptionField,
+      category: categoryField,
+      input: transactionTypeField === 'up'
+    }))
 
     onClose()
   }
 
-  const [SelectComponent, setSelectComponent] = useState(false)
+  const [transactionTypeField, setTransactionTypeField] = useState('')
+
+  const onChangeSelectGroup = (e) => {
+    setTransactionTypeField(e.target.value)
+  }
 
   return (
     <>
@@ -67,20 +75,25 @@ const NewTransactionModal = memo(({ isOpen, onClose }) => {
                 onChangeHandler={categoryOnChange}
                 placeholder='Category' />
             </div>
-            <div className="select-group">
+            <div
+              className="select-group"
+              onChange={onChangeSelectGroup}
+            >
               <Select
                 id='select-up'
                 label='Enter'
                 variant='up'
-                value={SelectComponent}
-                changeHandle={setSelectComponent}
+                name='select-transaction-type'
+                value='up'
+                checked={transactionTypeField === 'up'}
               />
               <Select
                 id='select-down'
                 label='Enter'
                 variant='down'
-                value={SelectComponent}
-                changeHandle={setSelectComponent}
+                name='select-transaction-type'
+                value='down'
+                checked={transactionTypeField === 'down'}
               />
             </div>
             <Button variant='large'>Register</Button>
