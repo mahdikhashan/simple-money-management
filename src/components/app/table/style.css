@@ -52,3 +52,17 @@ table > tr > td {
   @apply py-8;
   @apply text-dt-grey-5;
 }
+
+table > tr > td.price-input {
+  @apply text-dt-green;
+}
+
+table > tr > td.price-output {
+  @apply text-dt-red-dark;
+}
+
+.table-item-description { @apply w-4/12 }
+.table-item-price { @apply w-2/12 }
+.table-item-category { @apply w-3/12 }
+.table-item-date { @apply w-2/12 }
+.table-item-edit { @apply w-1/12 }

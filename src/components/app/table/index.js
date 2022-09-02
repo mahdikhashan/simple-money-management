@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeCost, updateCost } from "../../../store/cost/slices";
 
+import useModal from "../../../hooks/use-modal";
+import EditTransactionModal from "../../modals/transaction/EditTransactionModal";
+
 import Pagination from "../../pagination";
 
 import DeleteIcon from '../../../assets/icons/trash-red-regular.png'
@@ -9,9 +12,11 @@ import EditIcon from '../../../assets/icons/pen-blue-regular.png'
 import EmptyBoxIcon from '../../../assets/icons/empty-box-grey-regular.png'
 
 import './style.css'
+import classNames from "classnames";
 
 function Table({ currentItems, header }) {
   const dispatch = useDispatch()
+  const [showModal] = useModal(EditTransactionModal)
 
   return (
     <>
@@ -29,13 +34,15 @@ function Table({ currentItems, header }) {
         {
           currentItems.length > 0 ? (currentItems.map((item) => (
             <tr>
-              <td>{item.price}</td>
-              <td>{item.category}</td>
-              <td>{item.description}</td>
-              <td>{item.date}</td>
-              <td>
+              <td className={'table-item-description'}>{item.description}</td>
+              <td className={classNames([item.input ? 'price-input' : 'price-output', 'table-item-price'])}>
+                {`${item.input === false ? '- ':' '} R$`}&nbsp;{item.price.toLocaleString()}
+              </td>
+              <td className={'table-item-category'}>{item.category}</td>
+              <td className={'table-item-date'}>{item.date}</td>
+              <td className={'table-item-edit'}>
                 <div className='table-row-edit'>
-                  <button onClick={() => dispatch(updateCost({id: item.id}))}>
+                  <button onClick={() => showModal({...item})}>
                     <img src={EditIcon} alt='edit' />
                   </button>
                   <button onClick={() => dispatch(removeCost({id: item.id}))}>
