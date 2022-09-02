@@ -22,7 +22,7 @@ function App() {
       <TransactionDetails />
       <SearchBar />
       <div className='transaction-table'>
-        <PaginatedTable itemsPerPage={3} header={false} />
+        <PaginatedTable itemsPerPage={15} header={false} />
       </div>
     </div>
   );
