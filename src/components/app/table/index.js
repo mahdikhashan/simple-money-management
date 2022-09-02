@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeCost } from "../../../store/cost/slices";
 
 import useModal from "../../../hooks/useModal";
