@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useContext, useMemo, useCallback } from 'react';
 import ModalContext from "../contexts/modal/ModalContext";
 import ModalProvider from "../contexts/modal/ModalProvider";
