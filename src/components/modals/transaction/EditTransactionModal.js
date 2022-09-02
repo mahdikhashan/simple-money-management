@@ -66,17 +66,17 @@ const EditTransactionModal = memo(({ isOpen, onClose, ...initials }) => {
               <Input
                 type='text'
                 value={descriptionField}
-                onChangeHandler={descriptionOnChange}
+                onChange={descriptionOnChange}
                 placeholder='Description' />
               <Input
                 type='number'
                 value={priceField}
-                onChangeHandler={priceOnChange}
+                onChange={priceOnChange}
                 placeholder='Price' />
               <Input
                 type='text'
                 value={categoryField}
-                onChangeHandler={categoryOnChange}
+                onChange={categoryOnChange}
                 placeholder='Category' />
             </div>
             <div
