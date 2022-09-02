@@ -1,6 +1,6 @@
 .App {
   @apply bg-dt-grey-2;
-  @apply h-screen;
+  @apply min-h-screen;
   @apply relative;
   @apply z-[1];
 }
@@ -23,10 +23,4 @@
   @apply top-0 left-0;
   @apply w-full h-[212px];
   @apply z-[-1];
-}
-
-.transaction-table {
-  @apply container mx-auto;
-  @apply table items-center justify-around;
-  @apply mt-6 pb-8;
 }
