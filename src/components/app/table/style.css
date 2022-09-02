@@ -61,8 +61,25 @@ table > tr > td.price-output {
   @apply text-dt-red-dark;
 }
 
-.table-item-description { @apply w-4/12 }
-.table-item-price { @apply w-2/12 }
-.table-item-category { @apply w-3/12 }
-.table-item-date { @apply w-2/12 }
-.table-item-edit { @apply w-1/12 }
+.transaction-table {
+  @apply container mx-auto;
+  @apply table items-center justify-around;
+  @apply mt-6 pb-8;
+}
+
+.table-item-description {
+  @apply w-4/12
+}
+
+.table-item-price,
+.table-item-date {
+  @apply w-2/12
+}
+
+.table-item-category {
+  @apply w-3/12
+}
+
+.table-item-edit {
+  @apply w-1/12
+}
