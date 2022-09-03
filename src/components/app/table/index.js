@@ -74,7 +74,7 @@ function Table({ currentItems, header }) {
   )
 }
 
-function PaginatedTable({ data, itemsPerPage, header, filterByDescription='' }) {
+function PaginatedTable({ data, itemsPerPage, header }) {
   const [currentItems, setCurrentItems] = useState([])
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
@@ -83,7 +83,7 @@ function PaginatedTable({ data, itemsPerPage, header, filterByDescription='' }) 
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(data.slice(itemOffset, endOffset).reverse())
     setPageCount(Math.ceil(data.length / itemsPerPage))
-  }, [itemOffset, itemsPerPage, data, filterByDescription])
+  }, [itemOffset, itemsPerPage, data])
 
   const handlePageClick = e => {
     const newOffset = (e.selected * itemsPerPage) % data.length
