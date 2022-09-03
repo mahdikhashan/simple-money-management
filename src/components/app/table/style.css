@@ -68,18 +68,22 @@ table > tr > td.price-output {
 }
 
 .table-item-description {
-  @apply w-4/12
+  @apply w-4/12;
+  text-align: start;
 }
 
 .table-item-price,
 .table-item-date {
-  @apply w-2/12
+  @apply w-2/12;
+  text-align: start;
 }
 
 .table-item-category {
-  @apply w-3/12
+  @apply w-3/12;
+  text-align: start;
 }
 
 .table-item-edit {
-  @apply w-1/12
+  @apply w-1/12;
+  text-align: start;
 }
