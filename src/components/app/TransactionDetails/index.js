@@ -14,14 +14,14 @@ const TransactionDetails = () => {
   useEffect(() => {
     setInputTransaction(
       costs
-        .filter((item) => item.input === true)
+        .filter((item) => item.transactionType === 'up')
         .map((item) =>  parseInt(item.price))
         .reduce((a, b) => a + b, 0)
     )
 
     setOutputTransaction(
       costs
-        .filter((item) => item.input === false)
+        .filter((item) => item.transactionType === 'down')
         .map((item) =>  parseInt(item.price))
         .reduce((a, b) => a + b, 0)
     )
