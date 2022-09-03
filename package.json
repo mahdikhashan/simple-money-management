@@ -20,7 +20,10 @@
     "web-vitals": "^2.1.4",
     "react-app-rewired": "^2.2.1",
     "babel-plugin-root-import": "^6.6.0",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "lodash": "^4.17.21",
+    "formik": "^2.2.9",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
