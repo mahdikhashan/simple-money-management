@@ -1,6 +1,5 @@
 // TODO: Uppercase naming convention for actions
 // TODO: Separate file for actions
-// TODO: Introduce selector functions
 
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
