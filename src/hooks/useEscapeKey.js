@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const useEscapeKey = ({ handleClose }) => {
+const useEscapeKey = ({ callback }) => {
   const targetKey = "Escape";
   const [isKeyPressed, setIsKeyPressed] = useState(false)
 
@@ -15,7 +15,7 @@ const useEscapeKey = ({ handleClose }) => {
   const keyDownHandler = ({ key }) => {
     if (key === targetKey) {
       setIsKeyPressed(true)
-      handleClose()
+      callback()
     }
   }
 
