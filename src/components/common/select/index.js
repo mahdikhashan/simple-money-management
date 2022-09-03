@@ -9,9 +9,16 @@ import ArrowDownWhite from '../../../assets/icons/arrow-circle-down-white.png'
 
 import './style.css'
 
-const Select = ({ label, id, value, checked, name, variant, onChange }) => {
+const Select = ({
+  field: { name, value, onChange, onBlur },
+  id,
+  label,
+  variant,
+  className,
+  ...props
+}) => {
   const source = variant === "up" ? 
-    ( checked ? ArrowUpWhite : ArrowUp ) : ( checked ? ArrowDownWhite : ArrowDown )
+    ( id === value ? ArrowUpWhite : ArrowUp ) : ( id === value ? ArrowDownWhite : ArrowDown )
 
   return (
     <>
@@ -21,11 +28,13 @@ const Select = ({ label, id, value, checked, name, variant, onChange }) => {
           type="radio"
           id={id} 
           name={name} 
-          value={value}
-          checked={checked}
+          value={id}
+          checked={id === value}
           onChange={onChange}
+          onBlur={onBlur}
+          {...props}
           />
-        <label for={id}>
+        <label htmlFor={id}>
           <img 
             src={ source } 
             alt="icon" />
