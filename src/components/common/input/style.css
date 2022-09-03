@@ -22,3 +22,15 @@
 .input-error {
   outline: 1px solid #F75A68 !important;
 }
+
+.formik-input {
+  @apply flex flex-col gap-2;
+}
+
+.formik-input > label {
+  @apply flex flex-col gap-2;
+}
+
+.formik-input > .error {
+  @apply text-dt-red;
+}
