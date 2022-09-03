@@ -11,6 +11,9 @@
   @apply bg-dt-green-light;
   @apply cursor-pointer;
 }
+.btn:disabled {
+  @apply bg-dt-grey-3;
+}
 
 .btn-small {
   @apply text-[14px];

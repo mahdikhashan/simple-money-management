@@ -7,7 +7,7 @@ import useHover from "../../../hooks/useHover";
 
 import './style.css'
 
-const Button = ({ variant, label, children, search, onClick }) => {
+const Button = ({ variant, label, children, search, onClick, ...props }) => {
   const [hoverRef, isHovered] = useHover()
 
   return (
@@ -22,6 +22,7 @@ const Button = ({ variant, label, children, search, onClick }) => {
         )}
         ref={hoverRef}
         onClick={onClick}
+        {...props}
       >
         {search && <img className={ isHovered ? 'btn-icon' : 'btn-icon-hover' } alt='search-icon' />}
         {label ?? children ?? 'Button'}
