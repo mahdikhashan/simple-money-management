@@ -17,7 +17,7 @@ export const costSlice = createSlice({
         category: action.payload.category,
         description: action.payload.description,
         date: d.toLocaleDateString('en-US'),
-        input: action.payload.input
+        transactionType: action.payload.transactionType
       }
 
       state.push(cost);
