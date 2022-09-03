@@ -3,40 +3,47 @@ import { useDispatch } from "react-redux";
 import { removeCost } from "../../../store/cost/slices";
 
 import useModal from "../../../hooks/useModal";
-import EditTransactionModal from "../../modals/transaction/EditTransactionModal";
+import transactionModal from "../../modals/transaction/transactionModal";
 
 import Pagination from "../../pagination";
 
-import DeleteIcon from '../../../assets/icons/trash-red-regular.png'
-import EditIcon from '../../../assets/icons/pen-blue-regular.png'
-import EmptyBoxIcon from '../../../assets/icons/empty-box-grey-regular.png'
+import DeleteIcon from '../../../assets/icons/trash-red-regular.png';
+import EditIcon from '../../../assets/icons/pen-blue-regular.png';
+import EmptyBoxIcon from '../../../assets/icons/empty-box-grey-regular.png';
 
 import classNames from "classnames";
 
-import './style.css'
+import './style.css';
 
 function Table({ currentItems, header }) {
   const dispatch = useDispatch()
-  const [showModal] = useModal(EditTransactionModal)
+  const [showModal] = useModal(transactionModal)
 
   return (
     <>
       <table>
         {header && (
           <tr className='table-header'>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th className={'table-item-description'}>Description</th>
+            <th className={'table-item-price'}>Price</th>
+            <th className={'table-item-category'}>Category</th>
+            <th className={'table-item-date'}>Date</th>
+            <th className={'table-item-edit'}>Edit</th>
           </tr>
         )}
         {
           currentItems.length > 0 ? (currentItems.map((item) => (
             <tr>
               <td className={'table-item-description'}>{item.description}</td>
-              <td className={classNames([item.input ? 'price-input' : 'price-output', 'table-item-price'])}>
+              <td className={
+                classNames(
+                [
+                    item.transactionType === 'up' ? 'price-input' : 'price-output',
+                    'table-item-price'
+                  ]
+                )
+              }
+              >
                 {`${item.input === false ? '- ':' '} R$`}&nbsp;{parseInt(item.price).toLocaleString()}
               </td>
               <td className={'table-item-category'}>{item.category}</td>
