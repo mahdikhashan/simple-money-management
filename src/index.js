@@ -10,7 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 
 import { MainLayout } from './layouts/layout';
-import { ThemeProvider } from './contexts/theme';
+import { DarkModeProvider } from './contexts/theme';
 
 import ModalProvider from "./contexts/modal/ModalProvider";
 
@@ -21,13 +21,13 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider>
+        <DarkModeProvider>
           <MainLayout>
             <ModalProvider>
               <App />
             </ModalProvider>
           </MainLayout>
-        </ThemeProvider>
+        </DarkModeProvider>
       </PersistGate>
     </Provider>
   </React.StrictMode>
