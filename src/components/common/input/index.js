@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
 import './style.css'
+import { useField } from "formik";
 
 const Input = ({ error, ...props }) => {
   return (
@@ -15,6 +16,24 @@ const Input = ({ error, ...props }) => {
     </>
   )
 }
+
+const InputFormik = ({ label, ...props }) => {
+  const [field, meta] = useField(props)
+  return (
+    <>
+      <div className='formik-input'>
+        <label>
+          {label}
+          <Input {...field} {...props} error={meta.error} />
+        </label>
+        {meta.error ? (
+           <div className="error">{meta.error}</div>
+         ) : null}
+      </div>
+    </>
+  )
+}
+
 
 Input.defaultProps = {
   error: false,
@@ -28,4 +47,5 @@ Input.propTypes = {
   placeholder: PropTypes.string,
 }
 
+export { InputFormik };
 export default Input;
