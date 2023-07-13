@@ -1,5 +1,7 @@
 # Simple Money Management
 
+A user-friendly web application built with React and Redux for efficient money management and budget tracking
+
 ## Features
 
 | Feature                                                         |     |
