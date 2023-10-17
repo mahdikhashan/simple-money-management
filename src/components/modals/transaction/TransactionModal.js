@@ -101,7 +101,7 @@ const TransactionModal = memo((props) => {
       onRequestClose={onClose}
       preventScroll={true}
     >
-      <CloseIconImage oncClose={onClose} />
+      <CloseIconImage onClose={onClose} />
       <div className="wrapper">
         <h2>New transaction</h2>
         <Formik
