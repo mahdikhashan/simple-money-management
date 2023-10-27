@@ -23,5 +23,6 @@ module.exports = {
   rules: {
     "eol-last": "error",
     "no-unused-vars": "warn",
+    "no-undef": "warn",
   },
 };

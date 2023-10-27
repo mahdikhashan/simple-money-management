@@ -1,3 +1,5 @@
+import React from "react";
+
 import { default as ReactModal } from "react-modal";
 
 import "./style.css";

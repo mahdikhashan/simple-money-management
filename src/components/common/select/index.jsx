@@ -1,3 +1,5 @@
+import React from "react";
+
 import PropTypes from "prop-types";
 
 import ArrowUp from "@Assets/icons/arrow-circle-up-regular.png";

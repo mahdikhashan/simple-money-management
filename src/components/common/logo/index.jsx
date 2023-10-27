@@ -1,3 +1,5 @@
+import React from "react";
+
 import LogoSrc from "@Assets/image/logo.png";
 
 const Logo = () => {
