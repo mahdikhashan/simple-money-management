@@ -43,7 +43,7 @@ const validationSchema = validator.object({
     .required("Category is required")
     .matches(
       /^[a-zA-Z]+$/,
-      "Cannot contain special characters, numbers or spaces"
+      "Cannot contain special characters, numbers or spaces",
     ),
   transactionType: validator
     .string()

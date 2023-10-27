@@ -72,7 +72,10 @@
     "webpack-help": "npx webpack --help=verbose | grep NODE_ENV",
     "build-dev": "NODE_ENV=development npx webpack-cli --mode development --config ./config/webpack.config.js",
     "build-prod": "npx webpack-cli --mode production",
-    "test": "jest"
+    "test": "jest",
+    "prettify": "yarn prettier . --write",
+    "check-preittifier": "npx prettier . --check",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -96,6 +99,8 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.3",
+    "prettier": "3.0.3",
     "sass": "^1.69.5",
     "url-loader": "^4.1.1",
     "webpack-cli": "^5.1.4"

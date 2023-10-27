@@ -6,7 +6,7 @@
 }
 
 .user-details > * {
-  @apply flex-grow;
+  @apply w-full;
 }
 
 .user-detail-header {
@@ -21,4 +21,10 @@
   @apply flex items-end justify-start;
   @apply flex-grow;
   @apply text-white text-4xl;
+}
+
+@media screen and (max-width: 600px) {
+  .user-details {
+    @apply flex flex-col items-center;
+  }
 }

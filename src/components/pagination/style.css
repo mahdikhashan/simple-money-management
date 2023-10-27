@@ -41,14 +41,14 @@ li.disabled a {
 }
 
 li.previous {
-  background-image: url('../../assets/icons/caret-left-bold.png');
+  background-image: url("../../assets/icons/caret-left-bold.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
 
 li.next {
-  background-image: url('../../assets/icons/caret-right-bold.png');
+  background-image: url("../../assets/icons/caret-right-bold.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

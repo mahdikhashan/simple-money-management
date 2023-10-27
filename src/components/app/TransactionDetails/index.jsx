@@ -20,14 +20,14 @@ const TransactionDetails = () => {
       costs
         .filter((item) => item.transactionType === "up")
         .map((item) => parseInt(item.price))
-        .reduce((a, b) => a + b, 0)
+        .reduce((a, b) => a + b, 0),
     );
 
     setOutputTransaction(
       costs
         .filter((item) => item.transactionType === "down")
         .map((item) => parseInt(item.price))
-        .reduce((a, b) => a + b, 0)
+        .reduce((a, b) => a + b, 0),
     );
 
     setTotalTransaction(inputTransaction - outputTransaction);

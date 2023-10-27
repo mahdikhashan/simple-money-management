@@ -4,20 +4,20 @@ A user-friendly web application built with React and Redux for efficient money m
 
 ## Features
 
-| Feature                                                         |     |
-| --------------------------------------------------------------- | --- |
-| Track income and outcome                                        | ✅  |
-| Keep records in browser local storage                           | ✅  |
-| Validate form fields                                            | ✅  |
+| Feature                               |     |
+| ------------------------------------- | --- |
+| Track income and outcome              | ✅  |
+| Keep records in browser local storage | ✅  |
+| Validate form fields                  | ✅  |
 
 ## Getting Started
 
-
-make sure `yarn` is globally accessible 
+make sure `yarn` is globally accessible
 
 ```
 npm install -g yarn
 ```
+
 then run the bellow command
 
 ```

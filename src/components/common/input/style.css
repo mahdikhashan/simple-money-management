@@ -16,11 +16,11 @@
 .input:active,
 .input:focus {
   @apply border-2 border-dt-green-light;
-  outline: 1px solid #00B37E;
+  outline: 1px solid #00b37e;
 }
 
 .input-error {
-  outline: 1px solid #F75A68 !important;
+  outline: 1px solid #f75a68 !important;
 }
 
 .formik-input {

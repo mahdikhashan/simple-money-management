@@ -40,7 +40,7 @@ export const costSlice = createSlice({
       const filteredState = state.filter((item) =>
         item.description
           .toLowerCase()
-          .includes(action.payload.search.toLowerCase())
+          .includes(action.payload.search.toLowerCase()),
       );
 
       return filteredState;

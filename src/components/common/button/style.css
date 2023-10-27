@@ -55,15 +55,14 @@
   @apply py-[14px] px-8;
   @apply text-white;
   @apply border-dt-green-light border-2 border-solid;
-
 }
 
 .btn-icon {
   @apply w-5 h-5;
-  content: url('../../../assets/icons/magnifying-glass-white.png');
+  content: url("../../../assets/icons/magnifying-glass-white.png");
 }
 
 .btn-icon-hover {
   @apply w-5 h-5;
-  content: url('../../../assets/icons/magnifying-glass-green.png');
+  content: url("../../../assets/icons/magnifying-glass-green.png");
 }

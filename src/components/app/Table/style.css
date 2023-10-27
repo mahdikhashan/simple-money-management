@@ -44,7 +44,7 @@ table > tr > td {
 }
 
 .table-empty-box,
-.table-empty-box > span{
+.table-empty-box > span {
   display: flex;
   flex-direction: column;
   align-items: center;
