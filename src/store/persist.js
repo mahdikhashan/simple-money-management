@@ -1,11 +1,11 @@
 import { persistReducer } from "redux-persist";
-import storage from 'redux-persist/lib/storage'
+import storage from "redux-persist/lib/storage";
 
 import reducers from "./reducers";
 
 const persistConfig = {
-    key: 'root',
-    storage
+  key: "simple-money-manager",
+  storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

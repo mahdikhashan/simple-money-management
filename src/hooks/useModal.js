@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { useContext, useMemo, useCallback } from 'react';
+import { useContext, useMemo, useCallback } from "react";
 import ModalContext from "../contexts/modal/ModalContext";
 import ModalProvider from "../contexts/modal/ModalProvider";
 
@@ -14,10 +14,18 @@ function useModal(component, data, onClose) {
   const key = useMemo(generateModalKey, []);
   const context = useContext(ModalContext);
   const showModal = useCallback(
-    modalData => context.showModal(key, component, modalData instanceof Event ? data : { ...data, ...modalData }),
+    (modalData) =>
+      context.showModal(
+        key,
+        component,
+        modalData instanceof Event ? data : { ...data, ...modalData }
+      ),
     [data, context.showModal]
   );
-  const hideModal = useCallback(() => context.hideModal(key, onClose), [context.hideModal, onClose, key]);
+  const hideModal = useCallback(
+    () => context.hideModal(key, onClose),
+    [context.hideModal, onClose, key]
+  );
 
   return [showModal, hideModal];
 }

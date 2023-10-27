@@ -1,7 +1,7 @@
-import isEmpty from "lodash.isempty";
-
 import React, { memo } from "react";
 import { useDispatch } from "react-redux";
+
+import isEmpty from "lodash.isempty";
 
 import * as validator from "yup";
 import { Field, Form, Formik } from "formik";
@@ -17,8 +17,7 @@ import CloseIcon from "@Assets/icons/x-regular.png";
 
 import "./style.css";
 
-const CloseIconImage = (props) => {
-  const { onClose } = props;
+const CloseIconImage = ({ onClose }) => {
   return (
     <img className="close-btn" src={CloseIcon} alt="close" onClick={onClose} />
   );

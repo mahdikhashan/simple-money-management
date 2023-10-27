@@ -1,14 +1,11 @@
-import React from 'react'
-import ReactPaginate from 'react-paginate'
+import React from "react";
 
-import './style.css'
+import ReactPaginate from "react-paginate";
 
-function Pagination (props) {
-  return (
-    <>
-      <ReactPaginate {...props} />
-    </>
-  )
+import "./style.css";
+
+function Pagination(props) {
+  return <ReactPaginate {...props} />;
 }
 
-export default Pagination
+export default Pagination;

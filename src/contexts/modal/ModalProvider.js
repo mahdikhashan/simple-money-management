@@ -1,11 +1,14 @@
-import React, { useState, useMemo, useCallback } from 'react';
-import ModalContext from './ModalContext';
+import React, { useState, useMemo, useCallback } from "react";
+import ModalContext from "./ModalContext";
 
 const ModalProvider = ({ children }) => {
   const [modalsConfig, setConfig] = useState({});
   const hideModal = useCallback(
     (modalKey, onClose) => {
-      setConfig(prevConfig => ({ ...prevConfig, [modalKey]: { ...prevConfig[modalKey], isOpen: false } }));
+      setConfig((prevConfig) => ({
+        ...prevConfig,
+        [modalKey]: { ...prevConfig[modalKey], isOpen: false },
+      }));
 
       if (onClose) {
         onClose();
@@ -15,7 +18,10 @@ const ModalProvider = ({ children }) => {
   );
   const showModal = useCallback(
     (modalKey, component, modalData) => {
-      setConfig(prevConfig => ({ ...prevConfig, [modalKey]: { isOpen: true, component, data: modalData } }));
+      setConfig((prevConfig) => ({
+        ...prevConfig,
+        [modalKey]: { isOpen: true, component, data: modalData },
+      }));
     },
     [setConfig]
   );
@@ -31,10 +37,19 @@ const ModalProvider = ({ children }) => {
   return (
     <ModalContext.Provider value={contextValue}>
       {children}
-      {Object.keys(modalsConfig).map(modalKey => {
+      {Object.keys(modalsConfig).map((modalKey) => {
         const { component: Component, isOpen, data } = modalsConfig[modalKey];
 
-        return isOpen && <Component onClose={() => hideModal(modalKey)} key={modalKey} isOpen={isOpen} {...data} />;
+        return (
+          isOpen && (
+            <Component
+              onClose={() => hideModal(modalKey)}
+              key={modalKey}
+              isOpen={isOpen}
+              {...data}
+            />
+          )
+        );
       })}
     </ModalContext.Provider>
   );

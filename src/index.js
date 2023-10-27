@@ -1,26 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import '../src/styles/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import { Provider } from 'react-redux';
-import store from './store'
-import { PersistGate } from 'redux-persist/integration/react'
-import { persistStore } from 'redux-persist'
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import { MainLayout } from './layouts/layout';
-import { DarkModeProvider } from './contexts/darkMode';
+import store from "./store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+
+import { MainLayout } from "./layouts/layout";
+import { DarkModeProvider } from "./contexts/darkMode";
 
 import ModalProvider from "./contexts/modal/ModalProvider";
 
-let persistor = persistStore(store)
+import "../src/styles/index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const PersistGateConfig = {
+  loading: null,
+  persistor: persistStore(store),
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate {...PersistGateConfig}>
         <DarkModeProvider>
           <MainLayout>
             <ModalProvider>
