@@ -1,4 +1,6 @@
-import React, { memo } from "react";
+import React from "react";
+import { useRef } from "react";
+
 import { useDispatch } from "react-redux";
 
 import isEmpty from "lodash.isempty";
@@ -15,7 +17,10 @@ import Modal from "@Components/common/modal";
 
 import CloseIcon from "@Assets/icons/x-regular.png";
 
+import { useParams, useNavigate } from "react-router-dom";
+
 import "./style.css";
+import "./reach-dialog-override.css";
 
 const CloseIconImage = ({ onClose }) => {
   return (
@@ -89,39 +94,48 @@ const TransactionForm = (props) => {
   );
 };
 
-const TransactionModal = memo((props) => {
+function TransactionModal(props) {
   const { isOpen, onClose, ...initials } = props;
   const dispatch = useDispatch();
 
+  let navigate = useNavigate();
+  let { id } = useParams();
+  let buttonRef = useRef(null);
+
+  function onDismiss() {
+    navigate(-1);
+  }
+
   return (
     <Modal
-      isOpen={isOpen}
-      shouldCloseOnOverlayClick={true}
-      onRequestClose={onClose}
-      preventScroll={true}
+      aria-labelledby="label"
+      onDismiss={onDismiss}
+      initialFocusRef={buttonRef}
     >
-      <CloseIconImage onClose={onClose} />
-      <div className="wrapper">
-        <h2>New transaction</h2>
-        <Formik
-          initialValues={initials}
-          onSubmit={(values, actions) => {
-            setTimeout(() => {
-              isEmpty(initials)
-                ? dispatch(addCost(values))
-                : dispatch(updateCost(values));
-              onClose();
-            }, 500);
-          }}
-          validationSchema={validationSchema}
-        >
-          {(props) => (
-            <TransactionForm formikProps={props} initials={initials} />
-          )}
-        </Formik>
-      </div>
+      <>
+        <CloseIconImage onClose={onClose} />
+        <div className="wrapper">
+          <h2>New transaction</h2>
+          <Formik
+            initialValues={initials}
+            onSubmit={(values, actions) => {
+              setTimeout(() => {
+                isEmpty(initials)
+                  ? dispatch(addCost(values))
+                  : dispatch(updateCost(values));
+                onDismiss();
+              }, 500);
+            }}
+            validationSchema={validationSchema}
+          >
+            {(props) => (
+              <TransactionForm formikProps={props} initials={initials} />
+            )}
+          </Formik>
+        </div>
+      </>
     </Modal>
   );
-});
+}
 
 export default TransactionModal;
