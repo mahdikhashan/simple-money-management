@@ -113,7 +113,7 @@ function TransactionModal(props) {
       initialFocusRef={buttonRef}
     >
       <>
-        <CloseIconImage onClose={onClose} />
+        <CloseIconImage onClose={onDismiss} />
         <div className="wrapper">
           <h2>New transaction</h2>
           <Formik
