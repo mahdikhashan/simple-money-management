@@ -14,7 +14,7 @@ const ModalProvider = ({ children }) => {
         onClose();
       }
     },
-    [setConfig],
+    [setConfig]
   );
   const showModal = useCallback(
     (modalKey, component, modalData) => {
@@ -23,7 +23,7 @@ const ModalProvider = ({ children }) => {
         [modalKey]: { isOpen: true, component, data: modalData },
       }));
     },
-    [setConfig],
+    [setConfig]
   );
   const contextValue = useMemo(
     () => ({
@@ -31,7 +31,7 @@ const ModalProvider = ({ children }) => {
       hideModal,
       isOpenedModal: Object.values(modalsConfig).some(({ isOpen }) => isOpen),
     }),
-    [hideModal, showModal, modalsConfig],
+    [hideModal, showModal, modalsConfig]
   );
 
   return (

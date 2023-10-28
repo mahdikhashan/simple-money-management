@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 import useFilterByDescription from "./store/cost/selectors/filterByDescription";
 
 import classNames from "classnames";
-import useDarkMode from "./hooks/useDarkMode";
+import useDarkMode from "@Hooks/useDarkMode";
 
-import PaginatedTable from "./components/app/Table";
+import PaginatedTable from "@Components/app/Table";
 
-import Navigation from "./components/app/Navigation";
-import TransactionDetails from "./components/app/TransactionDetails";
-import SearchBar from "./components/app/SearchBar";
+import Navigation from "@Components/app/Navigation";
+import TransactionDetails from "@Components/app/TransactionDetails";
+import SearchBar from "@Components/app/SearchBar";
 
 import "./styles/App.css";
 

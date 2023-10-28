@@ -37,10 +37,11 @@ export const costSlice = createSlice({
       return state.filter((row) => row.id === action.payload.id);
     },
     filterCostByDescription: (state, action) => {
-      const filteredState = state.filter((item) =>
+      let filteredState;
+      filteredState = state.filter((item) =>
         item.description
           .toLowerCase()
-          .includes(action.payload.search.toLowerCase()),
+          .includes(action.payload.search.toLowerCase())
       );
 
       return filteredState;

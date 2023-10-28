@@ -18,13 +18,13 @@ function useModal(component, data, onClose) {
       context.showModal(
         key,
         component,
-        modalData instanceof Event ? data : { ...data, ...modalData },
+        modalData instanceof Event ? data : { ...data, ...modalData }
       ),
-    [data, context.showModal],
+    [data, context.showModal]
   );
   const hideModal = useCallback(
     () => context.hideModal(key, onClose),
-    [context.hideModal, onClose, key],
+    [context.hideModal, onClose, key]
   );
 
   return [showModal, hideModal];
