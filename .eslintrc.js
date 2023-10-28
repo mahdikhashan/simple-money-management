@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
   plugins: ["react"],
@@ -11,7 +12,7 @@ module.exports = {
         browser: true,
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.js"],
       parserOptions: {
         sourceType: "script",
       },
