@@ -1,39 +1,34 @@
 import React from "react";
-import { useState } from "react";
 
-import useFilterByDescription from "./store/cost/selectors/filterByDescription";
+import { Route, Routes, useLocation } from "react-router-dom";
 
-import classNames from "classnames";
-import useDarkMode from "@Hooks/useDarkMode";
+import NoMatch from "@Components/app/NoMatch";
 
-import PaginatedTable from "@Components/app/Table";
+import DashboardLayout from "@Layouts/DashboardLayout";
+import DashboardPage from "@Pages/Dashboard";
 
-import Navigation from "@Components/app/Navigation";
-import TransactionDetails from "@Components/app/TransactionDetails";
-import SearchBar from "@Components/app/SearchBar";
-
-import "./styles/App.css";
+import TransactionModal from "@Modals/transaction/TransactionModal";
 
 function App() {
-  const { darkMode } = useDarkMode();
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const filteredCost = useFilterByDescription(searchKeyword);
+  let location = useLocation();
+
+  let state = location.state;
 
   return (
-    <div className={classNames("App", { "App-white-mode": darkMode })}>
-      <div className={darkMode ? "top-black-box" : "top-white-box"} />
-      <div className="top-container" />
-      <Navigation />
-      <TransactionDetails />
-      <SearchBar
-        value={searchKeyword}
-        onChange={(e) => setSearchKeyword(e.target.value)}
-        onClick={() => []}
-      />
-      <div className="transaction-table">
-        <PaginatedTable data={filteredCost} itemsPerPage={10} header={false} />
-      </div>
-    </div>
+    <>
+      <Routes location={state?.backgroundLocation || location}>
+        <Route path="/" element={<DashboardLayout />}>
+          <Route index element={<DashboardPage />} />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
+
+      {state?.backgroundLocation && (
+        <Routes>
+          <Route path="/transaction/new" element={<TransactionModal />} />
+        </Routes>
+      )}
+    </>
   );
 }
 

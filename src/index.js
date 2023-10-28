@@ -6,16 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 
 import store from "./store";
 
+import { BrowserRouter } from "react-router-dom";
+
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 
-import { MainLayout } from "./layouts/layout";
 import { DarkModeProvider } from "./contexts/darkMode";
 
 import ModalProvider from "./contexts/modal/ModalProvider";
 
-import "../src/styles/index.css";
+import "@Styles/index.css";
 
 const PersistGateConfig = {
   loading: null,
@@ -28,11 +29,11 @@ root.render(
     <Provider store={store}>
       <PersistGate {...PersistGateConfig}>
         <DarkModeProvider>
-          <MainLayout>
+          <BrowserRouter>
             <ModalProvider>
               <App />
             </ModalProvider>
-          </MainLayout>
+          </BrowserRouter>
         </DarkModeProvider>
       </PersistGate>
     </Provider>
