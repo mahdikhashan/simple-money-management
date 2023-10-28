@@ -3,10 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["eslint:recommended"],
+  plugins: ["react"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   overrides: [
     {
       env: {
+        browser: true,
         node: true,
       },
       files: [".eslintrc.{js,cjs}"],
@@ -24,5 +26,6 @@ module.exports = {
     "eol-last": "error",
     "no-unused-vars": "warn",
     "no-undef": "warn",
+    "react/prop-types": "warn",
   },
 };
