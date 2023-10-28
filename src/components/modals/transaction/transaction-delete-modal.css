@@ -1,0 +1,24 @@
+[data-reach-dialog-overlay] {
+  @apply flex;
+  @apply items-center;
+}
+
+[data-reach-dialog-content] {
+  @apply bg-dt-grey-4;
+  @apply max-w-[480px];
+}
+
+.wrapper-body {
+  @apply flex flex-row-reverse;
+  @apply flex-grow;
+  @apply gap-2;
+}
+.wrapper-body > * {
+  @apply flex-1;
+}
+
+@media screen and (max-width: 680px) {
+  .wrapper-body {
+    @apply flex-col;
+  }
+}

@@ -1,13 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import { useDispatch } from "react-redux";
-import { removeCost } from "@Store/cost/slices";
-
 import { Link, useLocation } from "react-router-dom";
-
-import useModal from "@Hooks/useModal";
-import transactionModal from "@Modals/transaction/TransactionModal";
 
 import Pagination from "@Components/pagination";
 
@@ -26,8 +20,6 @@ function Table(props) {
   const { currentItems, header } = props;
 
   let location = useLocation();
-
-  const dispatch = useDispatch();
 
   return (
     <table>
@@ -65,9 +57,14 @@ function Table(props) {
                 >
                   <img src={EditIcon} alt="edit" />
                 </Link>
-                <button onClick={() => dispatch(removeCost({ id: item.id }))}>
+                <Link
+                  key={item.id}
+                  className="router-link"
+                  to={`/transaction/${item.id}/delete`}
+                  state={{ backgroundLocation: location }}
+                >
                   <img src={DeleteIcon} alt="delete" />
-                </button>
+                </Link>
               </div>
             </td>
           </tr>
@@ -97,10 +94,10 @@ function PaginatedTable(props) {
     setPageCount(Math.ceil(data.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, data]);
 
-  const handlePageClick = (e) => {
+  function handlePageClick(e) {
     const newOffset = (e.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
-  };
+  }
 
   return (
     <>

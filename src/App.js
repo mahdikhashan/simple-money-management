@@ -8,6 +8,7 @@ import DashboardLayout from "@Layouts/DashboardLayout";
 import DashboardPage from "@Pages/Dashboard";
 
 import TransactionModal from "@Modals/transaction/TransactionModal";
+import TransactionDeleteModal from "@Modals/transaction/TransactionDeleteModal";
 
 function App() {
   let location = useLocation();
@@ -27,6 +28,10 @@ function App() {
         <Routes>
           <Route path="/transaction/new" element={<TransactionModal />} />
           <Route path="/transaction/:id" element={<TransactionModal />} />
+          <Route
+            path="/transaction/:id/delete"
+            element={<TransactionDeleteModal />}
+          />
         </Routes>
       )}
     </>
