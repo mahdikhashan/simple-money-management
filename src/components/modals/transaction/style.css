@@ -50,3 +50,13 @@ form > .select-group > span {
 form > button {
   display: flex;
 }
+
+form > .select-group > span > .wrapper > label {
+  @apply w-auto;
+}
+
+@media screen and (max-width: 600px) {
+  form > .select-group > span {
+    @apply flex flex-col;
+  }
+}
