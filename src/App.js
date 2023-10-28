@@ -26,6 +26,7 @@ function App() {
       {state?.backgroundLocation && (
         <Routes>
           <Route path="/transaction/new" element={<TransactionModal />} />
+          <Route path="/transaction/:id" element={<TransactionModal />} />
         </Routes>
       )}
     </>

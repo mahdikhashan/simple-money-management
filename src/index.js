@@ -14,8 +14,6 @@ import { persistStore } from "redux-persist";
 
 import { DarkModeProvider } from "./contexts/darkMode";
 
-import ModalProvider from "./contexts/modal/ModalProvider";
-
 import "@Styles/index.css";
 
 const PersistGateConfig = {
@@ -30,9 +28,7 @@ root.render(
       <PersistGate {...PersistGateConfig}>
         <DarkModeProvider>
           <BrowserRouter>
-            <ModalProvider>
-              <App />
-            </ModalProvider>
+            <App />
           </BrowserRouter>
         </DarkModeProvider>
       </PersistGate>

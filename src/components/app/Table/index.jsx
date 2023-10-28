@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeCost } from "@Store/cost/slices";
 
+import { Link, useLocation } from "react-router-dom";
+
 import useModal from "@Hooks/useModal";
 import transactionModal from "@Modals/transaction/TransactionModal";
 
@@ -18,11 +20,13 @@ import classNames from "classnames";
 import { v4 as uuid } from "uuid";
 
 import "./style.css";
+import "@Styles/router-link-button-override.css";
 
 function Table(props) {
   const { currentItems, header } = props;
 
-  const [showModal] = useModal(transactionModal);
+  let location = useLocation();
+
   const dispatch = useDispatch();
 
   return (
@@ -53,9 +57,14 @@ function Table(props) {
             <td className={"table-item-date"}>{item.date}</td>
             <td className={"table-item-edit"}>
               <div className="table-row-edit">
-                <button onClick={() => showModal({ ...item })}>
+                <Link
+                  key={item.id}
+                  className="router-link"
+                  to={`/transaction/${item.id}`}
+                  state={{ backgroundLocation: location }}
+                >
                   <img src={EditIcon} alt="edit" />
-                </button>
+                </Link>
                 <button onClick={() => dispatch(removeCost({ id: item.id }))}>
                   <img src={DeleteIcon} alt="delete" />
                 </button>

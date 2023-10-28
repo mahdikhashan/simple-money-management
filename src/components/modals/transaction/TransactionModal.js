@@ -9,6 +9,7 @@ import * as validator from "yup";
 import { Field, Form, Formik } from "formik";
 
 import { addCost, updateCost } from "@Store/cost/slices";
+import useFilterByItemID from "@Store/cost/selectors/filterByID";
 
 import { InputFormik } from "@Components/common/input";
 import Select from "@Components/common/select";
@@ -56,7 +57,7 @@ const validationSchema = validator.object({
 });
 
 const TransactionForm = (props) => {
-  const { formikProps, initials } = props;
+  const { formData, formikProps } = props;
   const { errors, isSubmitting } = formikProps;
 
   return (
@@ -88,7 +89,7 @@ const TransactionForm = (props) => {
         )}
       </div>
       <Button type="submit" disabled={isSubmitting}>
-        {isEmpty(initials) ? "Register" : "Edit"}
+        {isEmpty(formData) ? "Register" : "Edit"}
       </Button>
     </Form>
   );
@@ -101,6 +102,8 @@ function TransactionModal(props) {
   let navigate = useNavigate();
   let { id } = useParams();
   let buttonRef = useRef(null);
+
+  const formData = useFilterByItemID(id);
 
   function onDismiss() {
     navigate(-1);
@@ -129,7 +132,7 @@ function TransactionModal(props) {
             validationSchema={validationSchema}
           >
             {(props) => (
-              <TransactionForm formikProps={props} initials={initials} />
+              <TransactionForm formData={formData} formikProps={props} />
             )}
           </Formik>
         </div>

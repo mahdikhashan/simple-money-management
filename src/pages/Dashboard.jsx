@@ -15,8 +15,9 @@ import SearchBar from "@Components/app/SearchBar";
 import "@Styles/App.css";
 
 function DashboardPage() {
-  const { darkMode } = useDarkMode();
   const [searchKeyword, setSearchKeyword] = useState("");
+
+  const { darkMode } = useDarkMode();
   const filteredCost = useFilterByDescription(searchKeyword);
 
   return (

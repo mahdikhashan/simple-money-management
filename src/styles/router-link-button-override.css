@@ -1,3 +1,7 @@
+.router-link {
+  @apply no-underline;
+}
+
 .router-link-btn {
   @apply flex flex-row;
   @apply items-center justify-center;

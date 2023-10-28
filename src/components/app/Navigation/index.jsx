@@ -1,20 +1,16 @@
 import React from "react";
 import Logo from "@Components/common/logo";
 
-import useModal from "@Hooks/useModal";
-import transactionModal from "@Modals/transaction/TransactionModal";
-
 import useDarkMode from "@Hooks/useDarkMode";
 
 import { Link, useLocation } from "react-router-dom";
 
 import "./style.css";
-import "./router-link-button-override.css";
+import "@Styles/router-link-button-override.css";
 
 const Navigation = () => {
   let location = useLocation();
 
-  const [showModal] = useModal(transactionModal);
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
