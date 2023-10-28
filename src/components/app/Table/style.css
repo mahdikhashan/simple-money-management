@@ -87,3 +87,10 @@ table > tr > td.price-output {
   @apply w-1/12;
   text-align: start;
 }
+
+@media screen and (max-width: 680px) {
+  table {
+    @apply mx-8;
+    width: initial;
+  }
+}

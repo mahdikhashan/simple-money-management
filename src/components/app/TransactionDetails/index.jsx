@@ -8,12 +8,12 @@ import Card from "@Components/common/card";
 
 import "./style.css";
 
-const TransactionDetails = () => {
-  const costs = useSelector((state) => state.costs);
-
+function TransactionDetails() {
   const [inputTransaction, setInputTransaction] = useState(0);
   const [outputTransaction, setOutputTransaction] = useState(0);
   const [totalTransaction, setTotalTransaction] = useState(0);
+
+  const costs = useSelector((state) => state.costs);
 
   useEffect(() => {
     setInputTransaction(
@@ -79,6 +79,6 @@ const TransactionDetails = () => {
       </Card>
     </div>
   );
-};
+}
 
 export default TransactionDetails;

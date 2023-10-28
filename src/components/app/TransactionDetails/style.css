@@ -6,7 +6,8 @@
 }
 
 .user-details > * {
-  @apply w-full;
+  width: auto;
+  width: -webkit-fill-available;
 }
 
 .user-detail-header {
@@ -23,8 +24,22 @@
   @apply text-white text-4xl;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1280px) {
   .user-details {
     @apply flex flex-col items-center;
+    width: initial;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .user-details {
+    @apply flex flex-col items-center;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .user-details {
+    @apply mx-8;
+    width: initial;
   }
 }

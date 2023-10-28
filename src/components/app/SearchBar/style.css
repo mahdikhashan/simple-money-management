@@ -8,3 +8,16 @@
 .search-bar :first-child {
   flex-grow: 1;
 }
+
+@media screen and (max-width: 1024px) {
+  .search-bar {
+    @apply flex-row items-center;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .search-bar {
+    @apply mx-8;
+    width: initial;
+  }
+}

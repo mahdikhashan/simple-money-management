@@ -18,3 +18,16 @@
   @apply rounded-[6px];
   @apply p-2;
 }
+
+@media screen and (max-width: 1024px) {
+  .top-wrapper {
+    @apply flex-row items-center;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .top-wrapper {
+    @apply mx-8;
+    width: initial;
+  }
+}
