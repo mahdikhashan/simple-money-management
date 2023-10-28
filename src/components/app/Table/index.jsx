@@ -15,6 +15,8 @@ import EmptyBoxIcon from "@Assets/icons/empty-box-grey-regular.png";
 
 import classNames from "classnames";
 
+import { v4 as uuid } from "uuid";
+
 import "./style.css";
 
 function Table(props) {
@@ -36,7 +38,7 @@ function Table(props) {
       )}
       {currentItems.length > 0 ? (
         currentItems.map((item) => (
-          <tr>
+          <tr key={uuid()}>
             <td className={"table-item-description"}>{item.description}</td>
             <td
               className={classNames([
