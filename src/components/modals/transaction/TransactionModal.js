@@ -120,7 +120,7 @@ function TransactionModal() {
         <h2>New transaction</h2>
         <Formik
           initialValues={initials}
-          onSubmit={(values, actions) => {
+          onSubmit={(values) => {
             setTimeout(() => {
               isEmpty(initials)
                 ? dispatch(addCost(values))
