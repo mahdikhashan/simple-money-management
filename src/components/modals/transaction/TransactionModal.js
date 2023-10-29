@@ -21,7 +21,7 @@ import CloseIcon from "@Assets/icons/x-regular.png";
 import { useParams, useNavigate } from "react-router-dom";
 
 import "./style.css";
-import "./reach-dialog-override.css";
+import "@Styles/reach-dialog-override.css";
 
 const CloseIconImage = ({ onClose }) => {
   return (

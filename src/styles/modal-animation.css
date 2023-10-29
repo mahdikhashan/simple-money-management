@@ -1,0 +1,20 @@
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-down[data-reach-dialog-content] {
+  border-radius: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .slide-down[data-reach-dialog-content] {
+    animation: slide-down 0.2s ease;
+  }
+}
