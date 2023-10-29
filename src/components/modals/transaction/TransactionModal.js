@@ -109,6 +109,15 @@ function TransactionModal() {
     navigate(-1);
   }
 
+  function onSubmit(values) {
+    setTimeout(() => {
+      isEmpty(initials)
+        ? dispatch(addCost(values))
+        : dispatch(updateCost(values));
+      onDismiss();
+    }, 500);
+  }
+
   return (
     <Modal
       aria-labelledby="label"
@@ -120,14 +129,7 @@ function TransactionModal() {
         <h2>New transaction</h2>
         <Formik
           initialValues={initials}
-          onSubmit={(values) => {
-            setTimeout(() => {
-              isEmpty(initials)
-                ? dispatch(addCost(values))
-                : dispatch(updateCost(values));
-              onDismiss();
-            }, 500);
-          }}
+          onSubmit={(values) => onSubmit(values)}
           validationSchema={validationSchema}
         >
           {(props) => (
