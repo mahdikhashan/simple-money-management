@@ -57,7 +57,7 @@ const validationSchema = validator.object({
 });
 
 const TransactionForm = (props) => {
-  const { formData, formikProps } = props;
+  const { initials, formikProps } = props;
   const { errors, isSubmitting } = formikProps;
 
   return (
@@ -89,21 +89,21 @@ const TransactionForm = (props) => {
         )}
       </div>
       <Button type="submit" disabled={isSubmitting}>
-        {isEmpty(formData) ? "Register" : "Edit"}
+        {isEmpty(initials) ? "Register" : "Edit"}
       </Button>
     </Form>
   );
 };
 
-function TransactionModal(props) {
-  const { isOpen, onClose, ...initials } = props;
-  const dispatch = useDispatch();
-
+function TransactionModal() {
   let navigate = useNavigate();
   let { id } = useParams();
   let buttonRef = useRef(null);
 
+  const dispatch = useDispatch();
+
   const formData = useFilterByItemID(id);
+  const initials = { ...formData };
 
   function onDismiss() {
     navigate(-1);
@@ -115,28 +115,26 @@ function TransactionModal(props) {
       onDismiss={onDismiss}
       initialFocusRef={buttonRef}
     >
-      <>
+      <div className="wrapper">
         <CloseIconImage onClose={onDismiss} />
-        <div className="wrapper">
-          <h2>New transaction</h2>
-          <Formik
-            initialValues={initials}
-            onSubmit={(values, actions) => {
-              setTimeout(() => {
-                isEmpty(initials)
-                  ? dispatch(addCost(values))
-                  : dispatch(updateCost(values));
-                onDismiss();
-              }, 500);
-            }}
-            validationSchema={validationSchema}
-          >
-            {(props) => (
-              <TransactionForm formData={formData} formikProps={props} />
-            )}
-          </Formik>
-        </div>
-      </>
+        <h2>New transaction</h2>
+        <Formik
+          initialValues={initials}
+          onSubmit={(values, actions) => {
+            setTimeout(() => {
+              isEmpty(initials)
+                ? dispatch(addCost(values))
+                : dispatch(updateCost(values));
+              onDismiss();
+            }, 500);
+          }}
+          validationSchema={validationSchema}
+        >
+          {(props) => (
+            <TransactionForm initials={initials} formikProps={props} />
+          )}
+        </Formik>
+      </div>
     </Modal>
   );
 }
