@@ -57,6 +57,18 @@ table > tr > td.price-input {
   @apply text-dt-green;
 }
 
+table > tr {
+  @apply flex flex-row;
+}
+
+@media screen and (max-width: 680px) {
+  table > tr {
+    @apply flex flex-col;
+    @apply items-start;
+    @apply gap-3;
+  }
+}
+
 table > tr > td.price-output {
   @apply text-dt-red-dark;
 }
@@ -70,6 +82,12 @@ table > tr > td.price-output {
 .table-item-description {
   @apply w-4/12;
   text-align: start;
+}
+
+@media screen and (max-width: 680px) {
+  .table-item-description {
+    @apply font-bold text-2xl;
+  }
 }
 
 .table-item-price,
