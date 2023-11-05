@@ -10,7 +10,6 @@ import { withTranslation } from "react-i18next";
 
 import "./style.css";
 import "@Styles/router-link-button-override.css";
-
 function Navigation(props) {
   const { t } = props;
 
@@ -19,7 +18,7 @@ function Navigation(props) {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <div className="top-wrapper">
+    <div className="top-wrapper" data-testid="main-navigation">
       <Logo />
       <div className="btn-wrapper">
         <Link
@@ -43,4 +42,5 @@ function Navigation(props) {
   );
 }
 
+export { Navigation };
 export default withTranslation()(Navigation);

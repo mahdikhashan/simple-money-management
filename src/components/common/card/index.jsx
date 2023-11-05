@@ -6,15 +6,13 @@ import "./style.css";
 
 const Card = ({ children, color }) => {
   return (
-    <>
-      <div
-        className={classNames("card", {
-          [`card-${color}`]: !!color,
-        })}
-      >
-        {children}
-      </div>
-    </>
+    <div
+      className={classNames("card", {
+        [`card-${color}`]: !!color,
+      })}
+    >
+      {children}
+    </div>
   );
 };
 

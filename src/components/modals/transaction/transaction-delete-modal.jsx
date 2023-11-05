@@ -7,8 +7,6 @@ import { removeCost } from "@Store/cost/slices";
 import Button from "@Components/common/button";
 import Modal from "@Components/common/modal";
 
-import CloseIcon from "@Assets/icons/x-regular.png";
-
 import { useNavigate, useParams } from "react-router-dom";
 
 import "./style.css";
@@ -16,7 +14,12 @@ import "./transaction-delete-modal.css";
 
 const CloseIconImage = ({ onClose }) => {
   return (
-    <img className="close-btn" src={CloseIcon} alt="close" onClick={onClose} />
+    <img
+      className="close-btn"
+      src={require("../../../assets/icons/x-regular.png")}
+      alt="close"
+      onClick={onClose}
+    />
   );
 };
 

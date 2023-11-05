@@ -7,8 +7,8 @@ import NoMatch from "@Components/app/NoMatch";
 import DashboardLayout from "@Layouts/DashboardLayout";
 import DashboardPage from "@Pages/Dashboard";
 
-import TransactionModal from "@Modals/transaction/TransactionModal";
-import TransactionDeleteModal from "@Modals/transaction/TransactionDeleteModal";
+import TransactionModal from "@Modals/transaction/transaction-modal";
+import TransactionDeleteModal from "@Modals/transaction/transaction-delete-modal";
 
 function App() {
   let location = useLocation();
