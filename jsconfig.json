@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES6",
+    "target": "es5",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@Components/*": ["./src/components/*"],
+      "@Modals/*": ["./src/components/modals/*"],
+      "@Assets/*": ["./src/assets/*"],
+      "@Hooks/*": ["./src/hooks/*"],
+      "@Store/*": ["./src/store/*"],
+      "@Styles/*": ["./src/styles/*"],
+      "@Pages/*": ["./src/pages/*"],
+      "@Layouts/*": ["./src/layouts/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
