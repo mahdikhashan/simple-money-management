@@ -1,14 +1,19 @@
 import React from "react";
+
 import Logo from "@Components/common/logo";
 
 import useDarkMode from "@Hooks/useDarkMode";
 
 import { Link, useLocation } from "react-router-dom";
 
+import { withTranslation } from "react-i18next";
+
 import "./style.css";
 import "@Styles/router-link-button-override.css";
 
-const Navigation = () => {
+function Navigation(props) {
+  const { t } = props;
+
   let location = useLocation();
 
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -22,7 +27,7 @@ const Navigation = () => {
           to={"/transaction/new"}
           state={{ backgroundLocation: location }}
         >
-          New Transaction
+          {t("new-transaction-btn")}
         </Link>
         <img
           onClick={toggleDarkMode}
@@ -36,6 +41,6 @@ const Navigation = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Navigation;
+export default withTranslation()(Navigation);
