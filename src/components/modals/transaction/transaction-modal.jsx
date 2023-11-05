@@ -16,8 +16,6 @@ import Select from "@Components/common/select";
 import Button from "@Components/common/button";
 import Modal from "@Components/common/modal";
 
-import CloseIcon from "@Assets/icons/x-regular.png";
-
 import { useParams, useNavigate } from "react-router-dom";
 
 import "./style.css";
@@ -25,7 +23,12 @@ import "@Styles/reach-dialog-override.css";
 
 const CloseIconImage = ({ onClose }) => {
   return (
-    <img className="close-btn" src={CloseIcon} alt="close" onClick={onClose} />
+    <img
+      className="close-btn"
+      src={require("../../../assets/icons/x-regular.png")}
+      alt="close"
+      onClick={onClose}
+    />
   );
 };
 
