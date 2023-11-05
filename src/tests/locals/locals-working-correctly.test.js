@@ -36,7 +36,6 @@ it("Locales Working Correctly", () => {
       <MemoryRouter initialEntries={[route]}>
         <Navigation t={() => "Text is Translated"} />
       </MemoryRouter>
-      ,
     </DarkModeProvider>
   );
 

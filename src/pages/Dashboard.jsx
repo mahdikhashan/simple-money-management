@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useState } from "react";
 
 import useFilterByDescription from "@Store/cost/selectors/filterByDescription";
@@ -24,7 +24,9 @@ function DashboardPage() {
     <div className={classNames("App", { "App-white-mode": darkMode })}>
       <div className={darkMode ? "top-black-box" : "top-white-box"} />
       <div className="top-container" />
-      <Navigation />
+      <Suspense>
+        <Navigation />
+      </Suspense>
       <TransactionDetails />
       <SearchBar
         value={searchKeyword}

@@ -74,6 +74,7 @@
     "build-prod": "npx webpack-cli --mode production",
     "test": "jest --config ./jest.config.js",
     "test:watch": "jest --watchAll --config ./jest.config.js",
+    "test:e2e": "npx playwright test",
     "prettify": "yarn prettier . --write",
     "check-preittifier": "npx prettier . --check",
     "prepare": "husky install"
@@ -95,6 +96,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.23.0",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
+    "@playwright/test": "^1.39.0",
     "@testing-library/react": "^14.0.0",
     "@types/node": "^20.8.9",
     "babel-jest": "^29.7.0",
