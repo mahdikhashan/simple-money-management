@@ -19,5 +19,16 @@ main.open {
 @media (max-width: 768px) {
   .container-wrapper {
     grid-template-columns: 1fr;
+    grid-template-rows: 60px;
+  }
+
+  main {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  main.open {
+    margin-left: 0px;
+    margin-top: 120px;
   }
 }

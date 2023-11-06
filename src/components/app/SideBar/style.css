@@ -42,3 +42,34 @@ aside.open {
   all: unset;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  aside {
+    @apply flex;
+    @apply flex-row;
+    @apply justify-between;
+
+    @apply items-center;
+    @apply bg-dt-grey-3;
+    @apply py-8;
+    @apply px-8;
+
+    width: auto;
+  }
+
+  aside.open {
+    height: 120px;
+    width: auto;
+    top: 0;
+
+    @apply items-start;
+  }
+
+  .sidebar-roll-icon {
+    transform: rotate(-90deg);
+  }
+
+  .sidebar-roll-icon.open {
+    transform: rotate(90deg);
+  }
+}
