@@ -1,13 +1,14 @@
 .top-wrapper {
   @apply container mx-auto;
   @apply flex flex-row items-center justify-between;
+  @apply justify-end;
+
   @apply py-10;
   @apply z-10;
 }
 
 .btn-wrapper {
   @apply flex flex-row gap-4;
-  @apply items-center;
 }
 
 .btn-wrapper > img {

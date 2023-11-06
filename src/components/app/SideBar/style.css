@@ -1,3 +1,35 @@
-sidebar {
+aside {
   @apply flex;
+  @apply flex-col;
+  @apply justify-start;
+
+  @apply items-center;
+
+  @apply py-8;
+}
+
+aside.open {
+  width: 200px;
+}
+
+.sidebar-header {
+  @apply flex-none;
+}
+
+.sidebar-body {
+  @apply flex-1;
+}
+
+.sidebar-footer {
+  @apply flex-none;
+}
+
+.sidebar-roll-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-roll-button {
+  all: unset;
+  cursor: pointer;
 }

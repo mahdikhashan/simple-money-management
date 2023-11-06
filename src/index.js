@@ -20,6 +20,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
 import "@Styles/index.css";
+import "@Styles/layouts/dashboard-layout.css";
 
 i18n
   .use(Backend)

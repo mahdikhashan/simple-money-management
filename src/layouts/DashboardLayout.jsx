@@ -4,16 +4,14 @@ import { Outlet } from "react-router-dom";
 
 import SideBar from "@Components/app/SideBar";
 
-function DashboardLayout(props) {
-  const { children } = props;
-
+function DashboardLayout() {
   return (
-    <>
+    <div className="container-wrapper">
       <SideBar />
       <main>
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
 

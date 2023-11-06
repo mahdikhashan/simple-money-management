@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import Logo from "@Components/common/logo";
 
 import "./style.css";
 
-function SideBar(props) {
+function SideBar() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <sidebar>
-      {/*<nav>*/}
-      {/*  <ul>*/}
-      {/*    <li>*/}
-      {/*      <Link to="/">Home</Link>*/}
-      {/*    </li>*/}
-      {/*    <li>*/}
-      {/*      <Link to="/gallery">Gallery</Link>*/}
-      {/*    </li>*/}
-      {/*    <li>*/}
-      {/*      <Link to="/transaction/new">New</Link>*/}
-      {/*    </li>*/}
-      {/*  </ul>*/}
-      {/*</nav>*/}
-    </sidebar>
+    <aside className={``}>
+      <div className="sidebar-header">
+        <Logo />
+      </div>
+      <div className="sidebar-body"></div>
+      <div className="sidebar-footer">
+        <button className="sidebar-roll-button" onClick={toggleSidebar}>
+          <img
+            className="sidebar-roll-icon"
+            src={require("../../../assets/icons/arrow-right-white-50.png")}
+            alt="arrow-right-sidebar"
+          />
+        </button>
+      </div>
+    </aside>
   );
 }
 

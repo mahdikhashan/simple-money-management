@@ -1,0 +1,22 @@
+.container-wrapper {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  height: 100vh;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  @apply bg-dt-grey-3;
+  color: #fff;
+}
+
+main {
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+  .container-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
