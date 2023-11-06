@@ -11,8 +11,6 @@ import EmptyBoxIcon from "@Assets/icons/empty-box-grey-regular.png";
 
 import classNames from "classnames";
 
-import { v4 as uuid } from "uuid";
-
 import "./style.css";
 import "@Styles/router-link-button-override.css";
 
@@ -33,42 +31,48 @@ function Table(props) {
         </tr>
       )}
       {currentItems.length > 0 ? (
-        currentItems.map((item) => (
-          <tr key={uuid()}>
-            <td className={"table-item-description"}>{item.description}</td>
-            <td
-              className={classNames([
-                item.transactionType === "up" ? "price-input" : "price-output",
-                "Table-item-price",
-              ])}
-            >
-              {`${item.input === false ? "- " : " "} R$`}&nbsp;
-              {parseInt(item.price).toLocaleString()}
-            </td>
-            <td className={"table-item-category"}>{item.category}</td>
-            <td className={"table-item-date"}>{item.date}</td>
-            <td className={"table-item-edit"}>
-              <div className="table-row-edit">
-                <Link
-                  key={item.id}
-                  className="router-link"
-                  to={`/transaction/${item.id}`}
-                  state={{ backgroundLocation: location }}
-                >
-                  <img src={EditIcon} alt="edit" />
-                </Link>
-                <Link
-                  key={item.id}
-                  className="router-link"
-                  to={`/transaction/${item.id}/delete`}
-                  state={{ backgroundLocation: location }}
-                >
-                  <img src={DeleteIcon} alt="delete" />
-                </Link>
-              </div>
-            </td>
-          </tr>
-        ))
+        currentItems.map((item, index) => {
+          return (
+            <tr key={index} data-testid={`transaction-item-${index}`}>
+              <td className={"table-item-description"}>{item.description}</td>
+              <td
+                className={classNames([
+                  item.transactionType === "up"
+                    ? "price-input"
+                    : "price-output",
+                  "Table-item-price",
+                ])}
+              >
+                {`${item.input === false ? "- " : " "} R$`}&nbsp;
+                {parseInt(item.price).toLocaleString()}
+              </td>
+              <td className={"table-item-category"}>{item.category}</td>
+              <td className={"table-item-date"}>{item.date}</td>
+              <td className={"table-item-edit"}>
+                <div className="table-row-edit">
+                  <Link
+                    key={item.id}
+                    className="router-link"
+                    to={`/transaction/${item.id}`}
+                    state={{ backgroundLocation: location }}
+                    data-testid={`transaction-edit-item-${index}`}
+                  >
+                    <img src={EditIcon} alt="edit" />
+                  </Link>
+                  <Link
+                    key={item.id}
+                    className="router-link"
+                    to={`/transaction/${item.id}/delete`}
+                    state={{ backgroundLocation: location }}
+                    data-testid={`transaction-delete-item-${index}`}
+                  >
+                    <img src={DeleteIcon} alt="delete" />
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          );
+        })
       ) : (
         <div className="table-empty-box">
           <span>

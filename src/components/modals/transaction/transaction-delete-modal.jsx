@@ -48,16 +48,25 @@ function TransactionDeleteModal() {
       aria-labelledby="label"
       onDismiss={onDismiss}
       initialFocusRef={buttonRef}
+      data-testid="transaction-delete-modal"
     >
       <div className="modal-body">
         <CloseIconImage onClose={onDismiss} />
         <div className="wrapper">
           <h2>Delete Transaction</h2>
           <div className="wrapper-body">
-            <Button type="button" onClick={onConfirmHandler}>
+            <Button
+              type="button"
+              onClick={onConfirmHandler}
+              data-testid="transaction-delete-modal-confirm"
+            >
               Confirm
             </Button>
-            <Button type="button" onClick={onBackHandler}>
+            <Button
+              type="button"
+              onClick={onBackHandler}
+              data-testid="transaction-delete-modal-back"
+            >
               Back
             </Button>
           </div>
