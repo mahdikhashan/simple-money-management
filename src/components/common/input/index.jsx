@@ -28,7 +28,11 @@ const InputFormik = (props) => {
         {label}
         <Input {...field} {...restProps} error={error} />
       </label>
-      {error ? <div className="error">{error}</div> : null}
+      {error ? (
+        <div className="error" data-testid={`validation-error-${field.name}`}>
+          {error}
+        </div>
+      ) : null}
     </div>
   );
 };
