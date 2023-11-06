@@ -35,8 +35,28 @@ test.describe("New Transaction", () => {
 
     //TODO: check for validation to have been passed
 
+    const descriptionInputValidation = page.getByTestId(
+      "validation-error-description"
+    );
+    const priceInputValidation = page.getByTestId("validation-error-price");
+    const categoryInputValidation = page.getByTestId(
+      "validation-error-category"
+    );
+
+    await expect(descriptionInputValidation).toBeVisible({ visible: false });
+    await expect(priceInputValidation).toBeVisible({ visible: false });
+    await expect(categoryInputValidation).toBeVisible({ visible: false });
+
     const enterRadio = page.getByTestId("transaction-type-enter");
     await enterRadio.click();
+
+    const transactionTypeGroupValication = page.getByTestId(
+      "validation-error-transaction-type"
+    );
+
+    await expect(transactionTypeGroupValication).toBeVisible({
+      visible: false,
+    });
 
     const transactionRegisterButton = page.getByTestId(
       "transaction-register-button"
@@ -47,14 +67,33 @@ test.describe("New Transaction", () => {
 
     await expect(newTransactionModal).toBeVisible({ visible: false });
 
-    // await checkTransactionExistsInLocalStorage(page, NEW_TRANSACTION);
+    await checkTransactionExistsInLocalStorage(page, 1, NEW_TRANSACTION);
   });
 });
 
-// async function checkTransactionExistsInLocalStorage(page, transaction) {
-//   return await page.waitForFunction((e) => {
-//     return (
-//       JSON.parse(localStorage["persist:simple-money-manager"]).length === 1
-//     );
-//   }, transaction);
-// }
+async function checkTransactionExistsInLocalStorage(page, length, transaction) {
+  const store = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("persist:simple-money-manager"))
+  );
+
+  const costsArray = JSON.parse(store.costs);
+
+  expect(costsArray.length).toEqual(length);
+
+  const prettyConstArray = costsArray.reduce((acc, value) => {
+    return [
+      ...acc,
+      {
+        price: value.price,
+        category: value.category,
+        description: value.description,
+      },
+    ];
+  }, []);
+
+  expect(
+    prettyConstArray.some((item) =>
+      Object.keys(transaction).every((key) => item[key] === transaction[key])
+    )
+  ).toBe(true);
+}

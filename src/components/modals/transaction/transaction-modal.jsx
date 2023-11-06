@@ -108,7 +108,12 @@ const TransactionForm = (props) => {
           </div>
         </span>
         {errors.transactionType && (
-          <div className="error">{errors.transactionType}</div>
+          <div
+            className="error"
+            data-testid="validation-error-transaction-type"
+          >
+            {errors.transactionType}
+          </div>
         )}
       </div>
       <Button
