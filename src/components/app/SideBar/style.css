@@ -4,12 +4,17 @@ aside {
   @apply justify-start;
 
   @apply items-center;
-
+  @apply bg-dt-grey-3;
   @apply py-8;
+
+  @apply transition-[width] ease-in-out;
 }
 
 aside.open {
-  width: 200px;
+  width: 120px;
+  left: 0;
+
+  @apply items-center;
 }
 
 .sidebar-header {
@@ -27,6 +32,10 @@ aside.open {
 .sidebar-roll-icon {
   width: 20px;
   height: 20px;
+}
+
+.sidebar-roll-icon.open {
+  transform: rotate(180deg);
 }
 
 .sidebar-roll-button {

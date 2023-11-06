@@ -1,18 +1,19 @@
 .container-wrapper {
   display: grid;
   grid-template-columns: 60px 1fr;
+  grid-template-rows: 100%;
   height: 100vh;
 }
 
-aside {
-  display: flex;
-  flex-direction: column;
-  @apply bg-dt-grey-3;
-  color: #fff;
+main {
+  grid-column: 2;
+  transition: margin-left 0.2s;
+
+  background-color: #f4f4f4;
 }
 
-main {
-  background-color: #f4f4f4;
+main.open {
+  margin-left: 60px;
 }
 
 @media (max-width: 768px) {
