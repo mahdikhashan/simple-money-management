@@ -33,8 +33,6 @@ test.describe("New Transaction", () => {
     await expect(priceInput).toHaveValue("1999");
     await expect(categoryInput).toHaveValue("RandomTestCategory");
 
-    //TODO: check for validation to have been passed
-
     const descriptionInputValidation = page.getByTestId(
       "validation-error-description"
     );
