@@ -25,6 +25,7 @@ function Navigation(props) {
           className="router-link-btn router-link-btn__medium"
           to={"/transaction/new"}
           state={{ backgroundLocation: location }}
+          data-testid="add-new-transaction-button"
         >
           {t("new-transaction-btn")}
         </Link>

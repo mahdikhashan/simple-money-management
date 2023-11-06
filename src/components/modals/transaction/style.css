@@ -29,18 +29,16 @@ form > .input-group {
   gap: 16px;
 }
 
-form > .select-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
 form > .select-group > span {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  margin: 24px 0 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+form > .select-group > span > div {
+  @apply w-full;
 }
 
 .select-group > .error {
@@ -51,7 +49,7 @@ form > button {
   display: flex;
 }
 
-form > .select-group > span > .wrapper > label {
+form > .select-group > span > div > .wrapper > label {
   @apply w-auto;
 }
 

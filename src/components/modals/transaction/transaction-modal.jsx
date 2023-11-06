@@ -66,32 +66,56 @@ const TransactionForm = (props) => {
   return (
     <Form>
       <div className="input-group">
-        <InputFormik name="description" type="text" placeholder="Description" />
-        <InputFormik name="price" type="text" placeholder="Price" />
-        <InputFormik name="category" type="text" placeholder="Category" />
+        <InputFormik
+          name="description"
+          type="text"
+          placeholder="Description"
+          data-testid="description-input"
+        />
+        <InputFormik
+          name="price"
+          type="text"
+          placeholder="Price"
+          data-testid="price-input"
+        />
+        <InputFormik
+          name="category"
+          type="text"
+          placeholder="Category"
+          data-testid="category-input"
+        />
       </div>
       <div className="select-group">
         <span>
-          <Field
-            component={Select}
-            name="transactionType"
-            variant="up"
-            id="up"
-            label="Enter"
-          />
-          <Field
-            component={Select}
-            name="transactionType"
-            variant="down"
-            id="down"
-            label="Exit"
-          />
+          <div data-testid="transaction-type-enter">
+            <Field
+              component={Select}
+              name="transactionType"
+              variant="up"
+              id="up"
+              label="Enter"
+            />
+          </div>
+          <div data-testid="transaction-type-exit">
+            <Field
+              component={Select}
+              name="transactionType"
+              variant="down"
+              id="down"
+              label="Exit"
+              data-testid="transaction-type"
+            />
+          </div>
         </span>
         {errors.transactionType && (
           <div className="error">{errors.transactionType}</div>
         )}
       </div>
-      <Button type="submit" disabled={isSubmitting}>
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        data-testid="transaction-register-button"
+      >
         {isEmpty(initials) ? "Register" : "Edit"}
       </Button>
     </Form>
@@ -126,6 +150,7 @@ function TransactionModal() {
       aria-labelledby="label"
       onDismiss={onDismiss}
       initialFocusRef={buttonRef}
+      data-testid="new-transaction-modal"
     >
       <div className="wrapper">
         <CloseIconImage onClose={onDismiss} />
