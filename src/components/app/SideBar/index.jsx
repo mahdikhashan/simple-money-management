@@ -13,7 +13,11 @@ function SideBar(props) {
       </div>
       <div className="sidebar-body"></div>
       <div className="sidebar-footer">
-        <button className="sidebar-roll-button" onClick={toggle}>
+        <button
+          className="sidebar-roll-button"
+          onClick={toggle}
+          data-testid="sidebar-toggle-button"
+        >
           <img
             className={`sidebar-roll-icon ${isOpen ? "open" : ""}`}
             src={require("../../../assets/icons/arrow-right-white-50.png")}
