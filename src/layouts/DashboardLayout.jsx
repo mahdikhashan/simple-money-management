@@ -5,15 +5,14 @@ import { Outlet } from "react-router-dom";
 import SideBar from "@Components/app/SideBar";
 
 function DashboardLayout(props) {
-  const { children } = props;
-
+  const { isOpen, toggle } = props;
   return (
-    <>
-      <SideBar />
-      <main>
+    <div className="container-wrapper">
+      <SideBar isOpen={isOpen} toggle={toggle} />
+      <main className={`${isOpen ? "open" : ""}`}>
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
 

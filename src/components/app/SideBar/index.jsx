@@ -1,26 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import Logo from "@Components/common/logo";
 
 import "./style.css";
 
 function SideBar(props) {
+  const { isOpen, toggle } = props;
   return (
-    <sidebar>
-      {/*<nav>*/}
-      {/*  <ul>*/}
-      {/*    <li>*/}
-      {/*      <Link to="/">Home</Link>*/}
-      {/*    </li>*/}
-      {/*    <li>*/}
-      {/*      <Link to="/gallery">Gallery</Link>*/}
-      {/*    </li>*/}
-      {/*    <li>*/}
-      {/*      <Link to="/transaction/new">New</Link>*/}
-      {/*    </li>*/}
-      {/*  </ul>*/}
-      {/*</nav>*/}
-    </sidebar>
+    <aside className={`${isOpen ? "open" : ""}`}>
+      <div className="sidebar-header">
+        <Logo />
+      </div>
+      <div className="sidebar-body"></div>
+      <div className="sidebar-footer">
+        <button
+          className="sidebar-roll-button"
+          onClick={toggle}
+          data-testid="sidebar-toggle-button"
+        >
+          <img
+            className={`sidebar-roll-icon ${isOpen ? "open" : ""}`}
+            src={require("../../../assets/icons/arrow-right-white-50.png")}
+            alt="arrow-right-sidebar"
+          />
+        </button>
+      </div>
+    </aside>
   );
 }
 

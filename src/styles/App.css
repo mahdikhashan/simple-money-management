@@ -3,6 +3,7 @@
   @apply min-h-screen;
   @apply relative;
   @apply z-[1];
+  @apply px-4;
 }
 
 .App-white-mode {

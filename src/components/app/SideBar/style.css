@@ -1,3 +1,75 @@
-sidebar {
+aside {
   @apply flex;
+  @apply flex-col;
+  @apply justify-start;
+
+  @apply items-center;
+  @apply bg-dt-grey-3;
+  @apply py-8;
+
+  @apply transition-[width] ease-in-out;
+}
+
+aside.open {
+  width: 120px;
+  left: 0;
+
+  @apply items-center;
+}
+
+.sidebar-header {
+  @apply flex-none;
+}
+
+.sidebar-body {
+  @apply flex-1;
+}
+
+.sidebar-footer {
+  @apply flex-none;
+}
+
+.sidebar-roll-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-roll-icon.open {
+  transform: rotate(180deg);
+}
+
+.sidebar-roll-button {
+  all: unset;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    @apply flex;
+    @apply flex-row;
+    @apply justify-between;
+
+    @apply items-center;
+    @apply bg-dt-grey-3;
+    @apply py-8;
+    @apply px-8;
+
+    width: auto;
+  }
+
+  aside.open {
+    height: 120px;
+    width: auto;
+    top: 0;
+
+    @apply items-start;
+  }
+
+  .sidebar-roll-icon {
+    transform: rotate(-90deg);
+  }
+
+  .sidebar-roll-icon.open {
+    transform: rotate(90deg);
+  }
 }
