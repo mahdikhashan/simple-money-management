@@ -19,4 +19,8 @@ test("sidebar toggles correctly", async ({ page }) => {
     window.getComputedStyle(element).getPropertyValue("width")
   );
   expect(asideWidth).toEqual("120px");
+
+  await sidebarToggleButton.click();
+
+  expect(asideWidth).toEqual("80px");
 });
