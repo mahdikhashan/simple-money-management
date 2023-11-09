@@ -1,0 +1,2 @@
+eval "$(fnm env)"
+fnm use default
