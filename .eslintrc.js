@@ -5,7 +5,11 @@ module.exports = {
     es2021: true,
   },
   plugins: ["react"],
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended"
+  ],
   overrides: [
     {
       env: {

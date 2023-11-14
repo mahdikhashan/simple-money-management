@@ -12,9 +12,10 @@
   @apply flex flex-row-reverse;
   @apply flex-grow;
   @apply gap-2;
-}
-.wrapper-body > * {
-  @apply flex-1;
+
+  * {
+    @apply flex-1;
+  }
 }
 
 @media screen and (max-width: 680px) {

@@ -28,3 +28,7 @@ yarn-error.log*
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+/storybook-static/
+
+/tests-examples/

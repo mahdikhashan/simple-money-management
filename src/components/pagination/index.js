@@ -2,7 +2,7 @@ import React from "react";
 
 import ReactPaginate from "react-paginate";
 
-import "./style.css";
+import "./style.scss";
 
 function Pagination(props) {
   return <ReactPaginate {...props} />;

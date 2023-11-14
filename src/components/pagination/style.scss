@@ -21,7 +21,7 @@ li.previous a,
 li.next a,
 li.break a {
   border-color: transparent;
-  @apply bg-transparent !important;
+  background-color: transparent !important;
 }
 li.selected a {
   @apply bg-dt-green-dark;

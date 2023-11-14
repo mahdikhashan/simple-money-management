@@ -1,25 +1,33 @@
 table {
   display: flex;
   flex-direction: column;
-}
 
-table > .table-header {
-  @apply flex flex-row items-center justify-between;
-}
+  &.table-header {
+    @apply flex flex-row items-center justify-between;
+  }
 
-table > tr {
-  display: flex;
-  flex: 1;
-  @apply text-dt-grey-6;
-  @apply items-center justify-between;
-  @apply rounded-[5px];
-  @apply bg-dt-grey-3;
-  @apply px-8 py-5;
-  @apply mb-2;
-}
+  tr {
+    display: flex;
+    flex: 1;
+    @apply text-dt-grey-6;
+    @apply items-center justify-between;
+    @apply rounded-[5px];
+    @apply bg-dt-grey-3;
+    @apply px-8 py-5;
+    @apply mb-2;
 
-table > tr > td {
-  text-align: start;
+    td {
+      text-align: start;
+
+      &.price-input {
+        @apply text-dt-green;
+      }
+
+      &.price-output {
+        @apply text-dt-red-dark;
+      }
+    }
+  }
 }
 
 .table-row-edit {
@@ -27,38 +35,30 @@ table > tr > td {
   flex: 1;
   flex-direction: row;
   @apply gap-4;
-}
 
-.table-row-edit > * {
-  cursor: pointer !important;
-}
+  * {
+    cursor: pointer !important;
+  }
 
-.table-row-edit > button {
-  all: unset;
+  button {
+    all: unset;
+  }
 }
 
 .table-empty-box {
   display: flex;
+
   @apply rounded-[6px];
   @apply bg-dt-grey-3;
-}
 
-.table-empty-box,
-.table-empty-box > span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @apply py-8;
-  @apply text-dt-grey-5;
-}
-
-table > tr > td.price-input {
-  @apply text-dt-green;
-}
-
-table > tr {
-  @apply flex flex-row;
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @apply py-8;
+    @apply text-dt-grey-5;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -67,10 +67,6 @@ table > tr {
     @apply items-start;
     @apply gap-3;
   }
-}
-
-table > tr > td.price-output {
-  @apply text-dt-red-dark;
 }
 
 .transaction-table {

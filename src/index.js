@@ -22,6 +22,8 @@ import { initReactI18next } from "react-i18next";
 import "@Styles/index.css";
 import "@Styles/layouts/dashboard-layout.css";
 
+import "@Styles/global.scss";
+
 i18n
   .use(Backend)
   // detect user language

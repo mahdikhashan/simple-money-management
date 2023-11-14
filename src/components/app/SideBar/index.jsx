@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Logo from "@Components/common/logo";
 
-import "./style.css";
+import "./style.scss";
 
 function SideBar(props) {
   const { isOpen, toggle } = props;
