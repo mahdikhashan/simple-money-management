@@ -1,12 +1,1 @@
-- Fix playwright problem
-- Remove webpack configuration
-- Refactor build, test and develop scripts
-- Write 2 E2E tests
-- Remove gulp from the project
-- Fix modal close-icon jump issue
-- Sidebar component
-- PWA configuration
-- Deploy issue with Vercel
-- Test deployment environment
-- Refactor to have a react-native app
-- Setup project issue tracking using Github project
+- fix warn - The utility `w-[calc(100%-theme('spacing[some_key][1.5]'))]` contains an invalid theme value and was not generated. 
