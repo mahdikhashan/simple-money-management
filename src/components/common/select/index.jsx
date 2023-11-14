@@ -7,7 +7,7 @@ import ArrowUpWhite from "@Assets/icons/arrow-circle-up-white.png";
 import ArrowDown from "@Assets/icons/arrow-circle-down-regular.png";
 import ArrowDownWhite from "@Assets/icons/arrow-circle-down-white.png";
 
-import "./style.css";
+import "./style.scss";
 
 const Select = (props) => {
   const { field, id, label, variant, className, ...restProps } = props;

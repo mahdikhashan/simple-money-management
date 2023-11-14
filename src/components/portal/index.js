@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useState, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 

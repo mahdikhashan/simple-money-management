@@ -3,7 +3,7 @@ import React from "react";
 import Input from "@Components/common/input";
 import Button from "@Components/common/button";
 
-import "./style.css";
+import "./style.scss";
 
 const SearchBar = (props) => {
   const { value, onChange, onClick } = props;

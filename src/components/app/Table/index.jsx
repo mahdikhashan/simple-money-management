@@ -11,7 +11,7 @@ import EmptyBoxIcon from "@Assets/icons/empty-box-grey-regular.png";
 
 import classNames from "classnames";
 
-import "./style.css";
+import "./style.scss";
 import "@Styles/router-link-button-override.css";
 
 function Table(props) {

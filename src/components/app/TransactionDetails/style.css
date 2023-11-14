@@ -14,7 +14,7 @@
   @apply flex items-center justify-between;
 }
 
-.user-detail-header:first-child {
+.user-detail-header :first-child {
   @apply text-dt-grey-6 text-[16px];
 }
 

@@ -18,7 +18,7 @@ import Modal from "@Components/common/modal";
 
 import { useParams, useNavigate } from "react-router-dom";
 
-import "./style.css";
+import "./style.scss";
 import "@Styles/reach-dialog-override.css";
 
 const CloseIconImage = ({ onClose }) => {
@@ -158,7 +158,9 @@ function TransactionModal() {
       data-testid="new-transaction-modal"
     >
       <div className="wrapper">
-        <CloseIconImage onClose={onDismiss} />
+        <div className="wrapper--head">
+          <CloseIconImage onClose={onDismiss} />
+        </div>
         <h2>New transaction</h2>
         <Formik
           initialValues={initials}

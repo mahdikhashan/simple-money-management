@@ -9,8 +9,8 @@ import Modal from "@Components/common/modal";
 
 import { useNavigate, useParams } from "react-router-dom";
 
-import "./style.css";
-import "./transaction-delete-modal.css";
+import "./style.scss";
+import "./transaction-delete-modal.scss";
 
 const CloseIconImage = ({ onClose }) => {
   return (

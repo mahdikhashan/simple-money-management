@@ -8,13 +8,13 @@ aside {
   @apply py-8;
 
   @apply transition-[width] ease-in-out;
-}
 
-aside.open {
-  width: 120px;
-  left: 0;
+  &.open {
+    width: 120px;
+    left: 0;
 
-  @apply items-center;
+    @apply items-center;
+  }
 }
 
 .sidebar-header {
@@ -32,10 +32,10 @@ aside.open {
 .sidebar-roll-icon {
   width: 20px;
   height: 20px;
-}
 
-.sidebar-roll-icon.open {
-  transform: rotate(180deg);
+  &.open {
+    transform: rotate(180deg);
+  }
 }
 
 .sidebar-roll-button {
@@ -55,21 +55,21 @@ aside.open {
     @apply px-8;
 
     width: auto;
-  }
 
-  aside.open {
-    height: 120px;
-    width: auto;
-    top: 0;
+    &.open {
+      height: 120px;
+      width: auto;
+      top: 0;
 
-    @apply items-start;
+      @apply items-start;
+    }
   }
 
   .sidebar-roll-icon {
     transform: rotate(-90deg);
-  }
 
-  .sidebar-roll-icon.open {
-    transform: rotate(90deg);
+    &.open {
+      transform: rotate(90deg);
+    }
   }
 }
