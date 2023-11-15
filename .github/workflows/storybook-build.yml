@@ -1,15 +1,27 @@
-name: Build and Publish storybook to GitHub Pages
+name: Build and Publish Storybook to GitHub Pages
 
 on:
   push:
     branches:
-      - "main"
-      - "refactor"
+      - 'master'
+      - 'refactor'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
-      with:
-        path: dist/storybook
-        install_command: npm run ci-build-storybook
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+        with:
+          install_command: npm ci-build-storybook
+          build_command: npm build-storybook
+          path: storybook-static
+          checkout: false
