@@ -15,19 +15,34 @@ A user-friendly web application built with React and Redux for efficient money m
 make sure `yarn` is globally accessible
 
 ```
-npm install -g yarn
+npm install -g pnpm
 ```
 
 then run the bellow command
 
 ```
-yarn run dev
+pnpm run start-dev
 ```
 
 ### How to build
 
+build for development environment:
+
 ```
-yarn run build
+pnpm run build-dev
+```
+
+build for production environment:
+
+```
+pnpm run build-prod
+```
+
+## Component Library
+
+check it online [here](https://mahdikhashan.github.io/simple-money-management/) or on your local machine:
+```
+pnpm run storybook
 ```
 
 ## Roadmap
