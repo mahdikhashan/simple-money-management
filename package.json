@@ -81,6 +81,7 @@
     "test:e2e:debug": "npx playwright test --debug",
     "test:visual-regression": "loki test --force --port 6006",
     "test:visual-regression:update": "loki update --force --port 6006",
+    "test:ci:visual-regression": "pnpm run build-storybook && loki --requireReference --reactUri file:./storybook-static",
     "prettify": "yarn prettier . --write",
     "check-preittifier": "npx prettier . --check",
     "prepare": "husky install",
