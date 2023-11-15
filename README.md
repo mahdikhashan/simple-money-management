@@ -30,6 +30,13 @@ yarn run dev
 yarn run build
 ```
 
+## Component Library
+
+check it online [here](https://mahdikhashan.github.io/simple-money-management/) or on your local machine:
+```
+pnpm run storybook
+```
+
 ## Roadmap
 
 See the [open issues](https://github.com/jihchi/dify/issues) for a list of proposed features (and known issues).
