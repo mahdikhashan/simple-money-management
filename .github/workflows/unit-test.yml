@@ -1,0 +1,26 @@
+name: Unit Tests
+on:
+  push:
+    branches:
+      - "master"
+      - "refactor"
+  pull_request:
+    branches:
+      - "master"
+      - "refactor"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Packages
+        run: pnpm install
+      - name: Run tests
+        run: pnpm run test
