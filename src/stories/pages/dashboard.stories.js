@@ -2,9 +2,9 @@
 
 import { default as DashboardPage } from "@Pages/Dashboard";
 
-import { withReactContext } from 'storybook-react-context';
+import { withReactContext } from "storybook-react-context";
 
-import { DarkModeContext } from '../../contexts/darkMode/index'
+import { DarkModeContext } from "../../contexts/darkMode/index";
 
 export default {
   title: "pages/DashboardPage",
@@ -18,7 +18,6 @@ export default {
       initialState: { darkMode: false, toggleDarkMode: () => {} },
     }),
   ],
-
 };
 
 export const Default = {};
