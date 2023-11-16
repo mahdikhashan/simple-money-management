@@ -21,4 +21,4 @@ jobs:
         with:
           version: 7
       - name: Run tests
-        uses: pnpm run test
+        run: pnpm run test
