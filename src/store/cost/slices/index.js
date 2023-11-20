@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 
+export const initialState = {
+  loading: false,
+  hasError: false,
+  costs: [],
+};
+
 export const costSlice = createSlice({
   name: "costs",
-  initialState: [],
+  initialState,
   reducers: {
     addCost: (state, action) => {
       const d = new Date();
@@ -16,17 +22,21 @@ export const costSlice = createSlice({
         transactionType: action.payload.transactionType,
       };
 
-      state.push(cost);
+      return { loading: false, hasError: false, costs: [...state.costs, cost] };
     },
     removeCost: (state, action) => {
       return state.filter((cost) => cost.id !== action.payload.id);
     },
     updateCost: (state, action) => {
-      const index = state.findIndex((row) => row.id === action.payload.id);
-      if (index !== -1) {
-        const id = state[index].id;
+      console.log(state.costs);
+      const index = state.costs.findIndex(
+        (row) => row.id === action.payload.id
+      );
+      if (index) {
+        console.log(state);
+        const id = state.costs[index].id;
         const d = new Date();
-        state[index] = {
+        state.costs[index] = {
           ...action.payload,
           date: d.toLocaleDateString("en-US"),
           id,
