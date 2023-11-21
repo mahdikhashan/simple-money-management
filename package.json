@@ -20,8 +20,7 @@
     "check-preittifier": "npx prettier . --check",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "ci-build-storybook": "pnpm install --frozen-lockfile"
+    "build-storybook": "storybook build"
   },
   "browserslist": {
     "production": [
