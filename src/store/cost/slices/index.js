@@ -49,7 +49,12 @@ export const costSlice = createSlice({
   },
 });
 
-export const { addCost, removeCost, filterCostByDescription, updateCost } =
-  costSlice.actions;
+export const {
+  addCost,
+  removeCost,
+  filterCostByDescription,
+  updateCost,
+  filterByID,
+} = costSlice.actions;
 
 export default costSlice.reducer;
