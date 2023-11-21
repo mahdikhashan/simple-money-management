@@ -21,6 +21,6 @@ jobs:
         with:
           version: 7
       - name: Install Packages
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Run tests
         run: pnpm run test
